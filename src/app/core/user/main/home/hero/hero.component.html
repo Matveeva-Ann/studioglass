@@ -1,0 +1,22 @@
+<section class="hero">
+
+  <ion-content>
+    <swiper-container
+    autoplay-delay="4000"
+    speed="1500"
+    [slidesPerView]="1"
+    [spaceBetween]="0"
+    [loop]="true"
+    [pagination]="swiperPaginationOptions"
+    >
+      <swiper-slide *ngFor="let item of sliderInfo">
+        <img [src]="item.img" class="Slide-2">
+        <div class="sliderContent">
+          <h2 class="sliderContent__title">{{ item.name }}</h2>
+          <app-btn-link [btnName]="item.btnName" [link]="'/product/' + item.path" class="sliderContent__btn"></app-btn-link>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-content>
+
+</section>

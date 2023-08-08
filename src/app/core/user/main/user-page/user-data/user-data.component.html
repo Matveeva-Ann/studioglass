@@ -1,0 +1,31 @@
+<h2 class="title">Особисті дані</h2>
+<form class="userDataForm" [formGroup]="userDataForm">
+  <div class="userDataWrapper">
+    <input type="text" class="userDataForm__input" formControlName="userName" placeholder="*Ваше ім’я">
+    <input type="number" class="userDataForm__input" formControlName="userPhone" placeholder="*Ваш номер телефону">
+  </div>
+  <input type="text" class="userDataForm__input" formControlName="userEmail" placeholder="*Ваш email">
+</form>
+
+<h3 class="title">Адреси</h3>
+<div class="address" *ngFor="let item of userAddress">{{ item }}</div>
+<div class="btn-wrapper">
+  <button type="button" class="add-btn btn" (click)="addAddress()"> Додати адресу</button>
+  <button type="submit" class="save-btn btn"> Зберегти зміни</button>
+</div>
+
+<div class="addAdress" *ngIf="address">
+  <form [formGroup]="userAddressForm" class="userAddressForm" (ngSubmit)="addNewAddress()">
+    <div class="userDataWrapper">
+      <input type="text" class="userDataForm__input" formControlName="city" placeholder="*місто">
+      <input type="text" class="userDataForm__input" formControlName="regional" placeholder="*областьісто">
+    </div>
+    <div class="userDataWrapper">
+      <input type="text" class="userDataForm__input" formControlName="street" placeholder="*вулиця">
+      <input type="text" class="userDataForm__input" formControlName="houseNumber" placeholder="*номер будинку">
+      <input type="text" class="userDataForm__input" formControlName="apartmentNumber" placeholder="*номер квартири">
+    </div>
+
+    <button type="submit" class="btn btnAdd" [disabled]="userAddressForm.invalid">Додати</button>
+  </form>
+</div>

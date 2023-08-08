@@ -1,0 +1,11 @@
+<div class="container">
+  <app-bread-crumbs [categoryTitle]="categoryTitle"></app-bread-crumbs>
+  <h2 class="product__title">{{ categoryTitle }}</h2>
+  <div class="product__main">
+    <app-sort-filter></app-sort-filter>
+    <app-all-category-product [goodsArr]="goodsArr"></app-all-category-product>
+  </div>
+  
+  <app-about-category></app-about-category>
+
+</div>

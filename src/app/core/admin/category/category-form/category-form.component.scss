@@ -1,0 +1,122 @@
+@import "/src/app/styles/variables";
+
+.categoryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid $rgb-border;
+  padding: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 18px;
+  font-family: "Gina-Light";
+  font-weight: 300;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.input__wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.categoryForm__btn {
+  cursor: pointer;
+
+  padding: 15px 10px;
+
+  background-color: rgba(0, 0, 0, 0.65);
+  border: none;
+  color: #fff;
+
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+
+  &:active {
+    transform: scale(1.01, 1.1);
+  }
+}
+.categoryForm__btn[disabled]{
+  cursor: auto;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: rgba(183, 183, 183, 0.681);
+  &:active {
+    transform: scale(1, 1);
+  }
+}
+
+.inputFile__wrapper{
+  margin: 10px 0;
+}
+.inputFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  &__label{
+    cursor: pointer;
+    padding: 5px 22px;
+
+    background-color: rgba(0, 0, 0, 0.45);
+    color: rgba(255, 255, 255, 0.785);
+
+
+    font-size: 16px;
+    transition: background-color 250ms linear, color 250ms linear;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.65);
+      color: #fff;
+    }
+  }
+}
+.input--textarea {
+  resize: none;
+}
+.progress-bar{
+  margin-top: 20px;
+}
+
+.inputFile__img{
+  object-fit: cover;
+  max-width: 150px;
+  height: auto;
+}
+.inputFile__imgWrapper{
+  position: relative;
+  display: inline-block;
+
+  max-width: 150px;
+  height: auto;
+  padding: 20px;
+}
+.cross{
+  cursor: pointer;
+  user-select: none;
+
+  position: absolute;
+  top: -25px;
+  right: 0;
+
+  font-size: 35px;
+  &:active{
+    transform: translate3d(0, 0.05em, 0);
+  }
+}
+
+.inputsWrapper{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

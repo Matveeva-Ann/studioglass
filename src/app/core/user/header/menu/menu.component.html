@@ -1,0 +1,69 @@
+<div class="menu">
+  <div class="menu__info">
+    <ul class="menu__goods">
+      <li class="menu__goodsItem" *ngFor="let item of categoriesArr">
+        <a [routerLink]="[ '/product/' + item.path]" class="menu__info--link" (click)="close()">{{ item.name }}</a> 
+      </li>
+    </ul>
+
+    <ul class="menu__aboutUs" (click)="close()">
+      <li class="menu__aboutUsItem"><a href="" class="menu__info--link menu__aboutUs--bold">Про Studio Glass</a></li>
+      <li class="menu__aboutUsItem"><a [routerLink]="[ '/collection']"  class="menu__info--link menu__aboutUs--bold">Колекції товарів</a></li>
+      <li class="menu__aboutUsItem"><a href="" class="menu__info--link menu__aboutUs--bold">Контакти</a></li>
+      <li class="menu__aboutUsItem"><a href="" class="menu__info--link menu__aboutUs--bold">Оплата та доставка</a></li>
+      <li class="menu__aboutUsItem"><a [routerLink]="[ '/oferta']" class="menu__info--link menu__aboutUs--bold">Політика Конфіденційності</a></li>
+    </ul>
+  </div>
+
+  <div class="contact">
+    <ul class="contact__list">
+      <li class="contact__item">
+        <div class="contact--svgStyle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 32 32">
+            <path fill="#fff"
+              d="M30.5 29h-29a.5.5 0 0 1-.5-.5v-16a.5.5 0 0 1 1 0V28h28V8.5a.5.5 0 0 1 1 0v20a.5.5 0 0 1-.5.5z"
+              class="color263238 svgShape" />
+            <path fill="#fff"
+              d="M1.5 27a.498.498 0 0 1-.301-.898l8.884-6.74a.5.5 0 0 1 .603.797l-8.884 6.74A.501.501 0 0 1 1.5 27zm29 0a.496.496 0 0 1-.302-.102l-8.935-6.779a.499.499 0 1 1 .603-.797l8.935 6.779A.499.499 0 0 1 30.5 27zM16 21.253a2.915 2.915 0 0 1-1.859-.643L2.723 11.16C1.757 10.362 1 8.974 1 8V6.5a.5.5 0 0 1 .5-.5h29a.5.5 0 0 1 .5.5V8c0 .974-.757 2.362-1.723 3.161l-11.418 9.448a2.91 2.91 0 0 1-1.859.644zM2 7v1c0 .675.636 1.791 1.359 2.39l11.418 9.45c.645.531 1.801.532 2.445-.001l11.418-9.448C29.364 9.791 30 8.675 30 8V7H2z"
+              class="color263238 svgShape" />
+            <path fill="#fff"
+              d="M16 21.253a2.915 2.915 0 0 1-1.859-.643L2.723 11.16C1.757 10.362 1 8.974 1 8V6.5a.5.5 0 0 1 .5-.5h29a.5.5 0 0 1 .5.5V8c0 .974-.757 2.362-1.723 3.161l-11.418 9.448a2.91 2.91 0 0 1-1.859.644zM2 7v1c0 .675.636 1.791 1.359 2.39l11.418 9.45c.645.531 1.801.532 2.445-.001l11.418-9.448C29.364 9.791 30 8.675 30 8V7H2z"
+              class="color263238 svgShape" />
+          </svg>
+        </div>
+        <a href="mailto:sglass.supp@gmail.com" class="contact__link  contact--hover">sglass.supp@gmail.com</a>
+      </li>
+
+      <li class="contact__item">
+        <div class="contact--svgStyle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 18" id="mobile" width="21" height="21">
+            <path fill="white"
+              d="M4.813.502C3.813.502 3 1.314 3 2.314v11.873c0 1 .813 1.813 1.813 1.813h5.875c1 0 1.812-.813 1.812-1.813V2.315c0-1-.813-1.812-1.813-1.812H4.814zm0 .5h5.875c.723 0 1.312.588 1.312 1.312v10.188H3.5V2.314c0-.725.589-1.312 1.313-1.312zm1.921 1.521v.5H8.75v-.5H6.734zM3.5 13.002H12v1.187c0 .724-.588 1.313-1.312 1.313H4.812A1.314 1.314 0 0 1 3.5 14.189v-1.187z">
+            </path>
+          </svg>
+        </div>
+        <a href="tel:0800 33 08 36" class="contact__link contact--hover">0800 33 08 36</a>
+      </li>
+      <li class="contact__item">
+        <div class="contact--svgStyle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#fff"
+              d="M14.348 10.067 12.5 11.134V7a.5.5 0 0 0-1 0v5a.5.5 0 0 0 .75.433l2.598-1.5a.5.5 0 1 0-.5-.866zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10c5.52-.006 9.994-4.48 10-10 0-5.523-4.477-10-10-10zm0 19a9 9 0 1 1 0-18 9.01 9.01 0 0 1 9 9 9 9 0 0 1-9 9z"
+              class="color000 svgShape" />
+          </svg>
+        </div>
+        <span class="contact__link">
+          Пн-Пт: 09:00-18:00 <br>
+          Сб-Нд: Вихідний
+        </span>
+      </li>
+      <li class="contact__item contact__callMe">
+        <app-btn-link [btnName]="'ПЕРЕДЗВОНІТЬ МЕНІ'" (click)="openDialog()"></app-btn-link>
+        <app-call-dialog *ngIf="openModalWindow" (close)="closeWindow($event)"></app-call-dialog>
+      </li>
+    </ul>
+  </div>
+
+  <app-social-language></app-social-language>
+
+</div>

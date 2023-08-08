@@ -1,0 +1,40 @@
+<div class="container">
+  <form name="categoryForm" [formGroup]="categoryForm" class="categoryForm" (ngSubmit)="addCategory()">
+    <div class="inputsWrapper">
+      <input type="text" formControlName="name" class="input" placeholder="*Назва категорії">
+      <input type="text" formControlName="path" class="input" placeholder="*Шлях категорії">
+    </div>
+    <textarea formControlName="description" class="input input--textarea" placeholder="*Опис категорії" cols="30" rows="5"></textarea>
+
+    <div class="inputFile__wrapper">
+      <ng-container *ngIf="!addedFile; else elseTemplate">
+        <input type="file" class="inputFile" id="inputFile" (change)="upload($event)">
+        <label for="inputFile" class="inputFile__label">Додати фото для обкладинки</label>
+        <mat-progress-bar mode="determinate" value="{{uploadPercent}}" class="progress-bar"></mat-progress-bar>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="inputFile__imgWrapper">
+          <img [src]="imgUrl" class="inputFile__img">
+          <span class="cross" (click)="deleteImg()">&times;</span>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="inputFile__wrapper">
+      <ng-container *ngIf="!addedFileBanner; else elseTemp">
+        <input type="file" class="inputFile" id="inputBunner" (change)="uploadBanner($event)">
+        <label for="inputBunner" class="inputFile__label">Додати фото для банера</label>
+        <mat-progress-bar mode="determinate" value="{{ uploadPercentBanner }}" class="progress-bar"></mat-progress-bar>
+      </ng-container>
+      <ng-template #elseTemp>
+        <div class="inputFile__imgWrapper">
+          <img [src]="bannerUrl" class="inputFile__img">
+          <span class="cross" (click)="deleteBanner()">&times;</span>
+        </div>
+      </ng-template>
+    </div>
+
+    <button type="submit" class="categoryForm__btn" [disabled]="categoryForm.invalid">{{editStatus ? 'Зберезти зміни' :
+      'додати нову категорію'}}</button>
+  </form>
+</div>

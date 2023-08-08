@@ -1,0 +1,52 @@
+@import '/src/app/styles/variables';
+
+.table {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  
+  border-collapse: collapse;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.55); 
+}
+
+.header-th {
+  padding: 20px 30px 20px 10px;
+  border-bottom: 2px solid $rgb-border;
+  text-align: start;
+  font-family: 'Gina-Light';
+  font-weight: 300;
+  letter-spacing: 1.05px;
+}
+.body-td {
+  padding: 20px 10px;
+  text-align: start;
+  border-bottom: 1px solid $rgb-border;
+  & img {
+    min-width: 50px;
+    max-width: 100px;
+    height: auto;
+  }
+  &-btn {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s;
+    padding: 5px;
+    font-size: 16px;
+    user-select: none;
+    margin-right: 10px;
+    text-align: start;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      transform: translate3d(0, 0.1em, 0);
+    }
+  }
+}
+.header-btn{
+  padding: 20px;
+}

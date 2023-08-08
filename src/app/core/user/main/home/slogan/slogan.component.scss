@@ -1,0 +1,54 @@
+@import "/src/app/styles/variables";
+
+.container {
+  background-color: rgba(33, 33, 33);
+  padding: 100px 300px;
+  margin: 0;
+  border-bottom: 1px solid $rgb-border;
+  background-image: none;
+  position: relative;
+  transition: background-color 250ms linear;
+
+  &::before {
+    content: "";
+    background-image: url(/assets/img/paralax-small_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  @media (max-width: 1400px) {
+    padding: 80px 200px;
+  }
+  @media (max-width: 1200px) {
+    padding: 60px 30px 60px 100px;
+  }
+  @media (max-width: 770px) {
+    padding: 50px 20px;
+  }
+}
+.container:hover {
+  background-color: rgba(33, 33, 33, 0.7);
+  @media (max-width: 1200px) {
+    background-color: rgba(33, 33, 33);
+  }
+}
+
+.slogan {
+  font-size: 4.3vw;
+  text-align: center;
+  font-family: "Gina-Thin";
+  font-weight: 100;
+  margin: 0;
+  line-height: 4.2vw;
+
+  @media (max-width: 770px) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}

@@ -1,0 +1,40 @@
+@import "/src/app/styles/mixins";
+
+.admin {
+  padding: 90px 20px 0;
+  position: relative;
+  
+  min-height: 100vh;
+  width: calc(100% - 40px);
+
+  &::before {
+    content: "";
+    background-image: url(/assets/img/title_image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  @include dimming;
+  @media (max-width: 1200px) {
+    padding: 70px 12px 0;
+    width: calc(100% - 24px);
+  }
+  @media (max-width: 770px) {
+    padding: 50px 12px 0 12px;
+    width: calc(100% - 24px);
+  }
+}
+
+.container {
+  display: flex;
+  width: calc(100%);
+}
+.wrapperRouter{
+  flex-grow: 1;
+}

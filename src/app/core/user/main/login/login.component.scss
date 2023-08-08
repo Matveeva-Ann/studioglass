@@ -1,0 +1,120 @@
+@import "/src/app/styles/variables";
+@import '/src/app/styles/mixins';
+
+.container{
+  width: 100%;
+  height: 100vh;
+
+  background-image: url(/assets/img/bg-img-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-origin: content-box;
+
+  position: relative;
+
+  @include dimming;
+  backdrop-filter: blur(5px);
+}
+
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.login{
+  max-width: 590px;
+  width: 100%;
+}
+
+.login__title{
+  @include titleStyle;
+}
+
+.login__form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.auth__inputsWrapper{
+  min-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field{
+  margin-bottom: 20px;
+}
+
+.popup{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.popup__link{
+  padding-bottom: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Gina-Regular';
+  font-weight: 400;
+}
+
+input{
+  width: 100%;
+  height: 62px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  background-color: transparent;
+}
+
+@import '/src/app/styles/variables';
+
+.btn {
+  cursor: pointer;
+
+  padding: 0 30px 20px 0;
+
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  letter-spacing: 1.2px;
+  font-size: 14px;
+  color: #fff;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    
+    width: 80%;
+    height: 1px;
+    bottom: 0;
+    right: 0;
+
+    background-color: $rgb-border;
+    transition: width 250ms linear, background-color 250ms linear;
+  }
+}
+
+.btn:hover::after {
+  width: 100%;
+  background-color: #fff;
+}
+
+.btn__style {
+  margin-left: 40px;
+}

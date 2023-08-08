@@ -1,0 +1,8 @@
+<div class="container">
+  <ul class="breadCrumbs__list">
+    <li class="breadCrumbs__item"><a class="breadCrumbs__link" [routerLink]="[ '/']">головна</a> </li>
+    <li class="breadCrumbs__item"><a class="breadCrumbs__link" [routerLink]="[ '/collection']">колекції</a></li>
+    <li class="breadCrumbs__item"><a class="breadCrumbs__link" [routerLink]="[ '/product/' + categoryLink]">{{ categoryTitle }}</a></li>
+    <li class="breadCrumbs__item" *ngIf="productTitle"> {{ productTitle }} </li>
+  </ul>
+</div>

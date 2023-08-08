@@ -1,0 +1,126 @@
+@import "/src/app/styles/variables";
+@import '/src/app/styles/mixins';
+
+.container {
+  padding: 90px 12px 0 102px;
+  position: relative;
+  z-index: -2;
+
+  &::before {
+    content: "";
+    background-image: url(/assets/img/prom-img-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  @include dimming;
+  @media (max-width: 1200px) {
+    padding: 70px 12px 0 82px;
+  }
+  @media (max-width: 770px) {
+    padding: 50px 12px 0 12px;
+    &::before{
+      background-image: url(/assets/img/img-6.jpg);
+    }
+  }
+}
+
+.content {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+
+  font-size: 22px;
+  font-family: "Gina-Light";
+  font-weight: 300;
+
+  color: $textColorLight;
+
+  &::before {
+    content: "";
+    position: absolute;
+    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.oferta {
+  margin-top: 50px;
+  margin-bottom: 45px;
+
+  font-size: 58px;
+  font-family: "Gina-Light";
+  font-weight: 300;
+
+  text-align: center;
+  color: $textColor;
+
+  @media (max-width: 1200px) {
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+  @media (max-width: 770px) {
+    font-size: 30px;
+
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.oferta__title {
+  text-align: center;
+
+  font-size: 22px;
+  font-family: "Gina-Light";
+  font-weight: 300;
+
+  margin: 0;
+
+  @media (max-width: 770px) {
+    font-size: 18px;
+  }
+}
+.oferta__text {
+  margin: 20px 0 20px;
+}
+
+.oferta__mainPart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.oferta__subtitle--accent {
+  text-transform: uppercase;
+}
+
+.oferta__subtitle {
+  font-size: 29px;
+  margin: 0;
+  padding: 0;
+}
+
+.oferta__listItem {
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.oferta__listItem:first-child {
+  margin-top: 0;
+}

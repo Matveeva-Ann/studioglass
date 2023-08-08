@@ -1,0 +1,41 @@
+@import '/src/app/styles/mixins';
+
+.container {
+  width: calc(100% - 90px);
+  min-height: 100vh;
+  position: relative;
+  padding: 90px 0 0 90px;
+
+  display: flex;
+
+  @include dimming;
+  &::before {
+    content: "";
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url(/assets/img/pexels-mariana-blue-1188410.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% 35%;
+
+    filter: brightness(0.4);
+    z-index: -2;
+  }
+
+  @media (max-width: 770px){
+    width: calc(100% - 20px);
+    padding: 90px 0 0 20px;
+  }
+}
+app-nav{
+  margin-left: 40px;
+}
+.wrapperRouter{
+  flex-grow: 1;
+  padding: 0 20px;
+}

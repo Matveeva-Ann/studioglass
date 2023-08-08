@@ -1,0 +1,38 @@
+@import "/src/app/styles/variables";
+
+.nuv {
+  text-align: center;
+  user-select: none;
+
+  display: inline-block;
+  margin: 60px 0 60px -20px;
+  &__item {
+    cursor: pointer;
+
+    min-width: 190px;
+
+    border: 1px solid $rgb-border;
+    transition-duration: 0.1s;
+  }
+}
+
+.nuv__link {
+  display: inline-block;
+
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+
+  padding: 20px 30px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.active {
+  border-top: 3px solid #fff;
+  border-right: 1px solid transparent;
+  font-weight: 700;
+  color: black;
+}

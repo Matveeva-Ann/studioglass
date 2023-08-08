@@ -1,0 +1,96 @@
+<header class="header">
+  <button class="header__menu-btn" (click)="toggleMenu()" [ngClass]="{'displayNone': adminPage}">
+    <svg class="header__iconBurger" *ngIf="!showMenu">
+      <path [ngClass]="isProductPage ? 'black-text' : 'white-text'" stroke="white" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="1" d="M1 5h26M1 12h19M10 19h17" data-name="Burger Menu"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" *ngIf="showMenu" viewBox="0 0 101 101" width="28" height="28"
+      [ngClass]="{ 'black-text': isProductPage }">
+      <path
+        d="M83.9 17.1c-.9-.9-2.5-.9-3.4 0l-30 30-30-30c-.9-.9-2.5-.9-3.4 0s-.9 2.5 0 3.4l30 30-30 30c-.9.9-.9 2.5 0 3.4.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7l30-30 30 30c.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7.9-.9.9-2.5 0-3.4l-30-30 30-30c.9-.9.9-2.4 0-3.4z"
+        fill="#ffffff" [ngClass]="isProductPage ? 'black-text' : 'white-text'" />
+    </svg>
+    <span class="header__menuBtnText" [ngClass]="isProductPage ? 'black-text' : 'white-text'">МЕНЮ</span>
+  </button>
+
+  <div class="topHeader" appBlurOnScroll [ngClass]="{'borderColor': isProductPage}">
+    <h1 class="header__logo--wrapper">
+      <a [routerLink]="['']" class="header__logo" [ngClass]="isProductPage ? 'black-text' : 'white-text'">
+        Glass <span class="header__logo--position">studio</span>
+      </a>
+    </h1>
+
+    <div class="header__phone">
+
+      <a href="tel:0800 33 08 36" class="header__phoneNumber" [ngClass]="isProductPage ? 'black-text' : 'white-text'">
+        <svg class="header__iconPhone">
+          <path fill="white" [ngClass]="isProductPage ? 'black-text' : 'white-text'" stroke="white" stroke-width="1.1"
+            d="M4.813.502C3.813.502 3 1.314 3 2.314v11.873c0 1 .813 1.813 1.813 1.813h5.875c1 0 1.812-.813 1.812-1.813V2.315c0-1-.813-1.812-1.813-1.812H4.814zm0 .5h5.875c.723 0 1.312.588 1.312 1.312v10.188H3.5V2.314c0-.725.589-1.312 1.313-1.312zm1.921 1.521v.5H8.75v-.5H6.734zM3.5 13.002H12v1.187c0 .724-.588 1.313-1.312 1.313H4.812A1.314 1.314 0 0 1 3.5 14.189v-1.187z">
+          </path>
+        </svg>
+        <span class="header__number"> 0800 33 08 36</span></a>
+    </div>
+
+    <nav class="navigation main-navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item"><a [routerLink]="['']" class="navigation__link navigation__link--pading"
+            [ngClass]="isProductPage ? 'black-text' : 'white-text'">Головна</a></li>
+        <li class="navigation__item"><a href="" class="navigation__link navigation__link--pading"
+            [ngClass]="isProductPage ? 'black-text' : 'white-text'" [routerLink]="[ '/collection']">Колекції товарів</a>
+        </li>
+        <li class="navigation__item"><a [routerLink]="['oferta']" class="navigation__link navigation__link--pading"
+            [ngClass]="isProductPage ? 'black-text' : 'white-text'">Оферта</a></li>
+      </ul>
+    </nav>
+
+    <nav class="navigation">
+      <a class="navigation__link navigation__link--icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256.001 256.001">
+          <path fill="none" d="M0 0h256v256H0z" />
+          <circle [ngClass]="{ 'black-icon': isProductPage }" cx="115.998" cy="116" r="84" fill="none" stroke="#fff"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="20" class="colorStroke000 svgStroke" />
+          <path [ngClass]="{ 'black-text': isProductPage }" fill="none" stroke="#fff" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="20" d="m175.392 175.4 48.6 48.601" class="colorStroke000 svgStroke" />
+        </svg>
+      </a>
+      <a [routerLink]="['']" class="navigation__link navigation__link--icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100">
+          <path fill="none" [ngClass]="{ 'black-text': isProductPage }"
+            d="M48.6 85.4 15.7 52.8c-1.4-1.3-2.5-2.8-3.5-4.4-5.4-8.9-4-20.3 3.5-27.7C20 16.4 25.8 14 31.9 14c9.6 0 15.6 5.6 18.1 8.8 2.5-3.2 8.5-8.8 18.1-8.8 6.1 0 11.9 2.4 16.2 6.7 7.4 7.4 8.9 18.8 3.5 27.7-1 1.6-2.1 3.1-3.5 4.4L51.4 85.4c-.8.8-2 .8-2.8 0zM31.9 18c-5.1 0-9.8 2-13.4 5.5-6.1 6.1-7.3 15.5-2.9 22.8.8 1.3 1.8 2.6 2.9 3.7L50 81.2 81.5 50c1.1-1.1 2.1-2.3 2.9-3.7 4.4-7.4 3.3-16.8-2.9-22.8C77.9 20 73.1 18 68.1 18c-7.2 0-13.2 3.9-16.4 9.3-.8 1.3-2.7 1.3-3.5 0-3.1-5.4-9.1-9.3-16.3-9.3z"
+            class="color000 svgShape" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+          <path fill="#00f" d="M944-370v1684H-840V-370H944m8-8H-848v1700H952V-378z" class="color00F svgShape"
+            stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+        </svg>
+      </a>
+      <a (click)="transitionTO()" class="navigation__link navigation__link--icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" id="user">
+          <path fill="#FFF" [ngClass]="{ 'black-text': isProductPage }"
+            d="M59.3 52.2C65.8 48.2 70 40.3 70 33c0-10.4-8.5-22-20-22S30 22.6 30 33c0 7.3 4.2 15.2 10.7 19.2C25.3 56.3 14 70.4 14 87c0 1.1.9 2 2 2h68c1.1 0 2-.9 2-2 0-16.6-11.3-30.7-26.7-34.8zM34 33c0-10.3 8.5-18 16-18s16 7.7 16 18-8.5 18-16 18-16-7.7-16-18zM18.1 85c1-16.7 15-30 31.9-30s30.9 13.3 31.9 30H18.1z"
+            stroke="#FFF" stroke-width="3"></path>
+          <path fill="#FFF" d="M1224-790V894H-560V-790h1784m8-8H-568V902h1800V-798z" stroke="#FFF" stroke-width="3">
+          </path>
+        </svg>
+      </a>
+    </nav>
+
+    <div class="basket">
+      <a class="basket__link" (click)="basketOpen()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516 516" width="20" height="20">
+          <path [ngClass]="{ 'black-text': isProductPage }"
+            d="M448 160h-64v-4.5C384 87 329 32 260.5 32h-8C184 32 128 87 128 155.5v4.5H64L32 480h448l-32-320zm-288-4.5c0-50.7 41.8-91.5 92.5-91.5h8c50.7 0 91.5 40.8 91.5 91.5v4.5H160v-4.5zM67.8 448l24.9-256H128v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h192v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h35.4l24.9 256H67.8z"
+            fill="#FFF" />
+        </svg>
+      </a>
+ 
+      <app-basket-dialog *ngIf="basketDialogIsOpen" (closeThisWindow)="closeBasketDialog()"></app-basket-dialog>
+
+    </div>
+  </div>
+
+  <div class="sideHeader" appBlurOnScroll *ngIf="notAdminPanel" [ngClass]="{'displayNone': adminPage}" [ngClass]="{'borderColor': isProductPage}">
+    <app-social-language [isProductPage]="isProductPage"></app-social-language>
+  </div>
+
+  <app-menu *ngIf="showMenu" (closeThisWindow)="closeThisWindow()"></app-menu>
+
+</header>

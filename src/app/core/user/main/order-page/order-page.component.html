@@ -1,0 +1,80 @@
+<div class="container">
+
+  <div class="order">
+    <h2 class="order__title">Оформлення замовлення</h2>
+
+    <div class="order__forms">
+      <form action="" class="userForm">
+        <section>
+          <h2 class="order__formsTitle">1. Контактні дані</h2>
+          <div class="inputGroup">
+            <input type="text" class="inputField" placeholder="*Ваше ім’я">
+            <input type="text" class="inputField" placeholder="*Ваше прізвище">
+          </div>
+          <div class="inputGroup order--distance">
+            <input type="text" class="inputField" placeholder="*Ваш email">
+            <input type="text" class="inputField" placeholder="*Ваш номер телефону">
+          </div>
+        </section>
+
+        <section>
+          <h2 class="order__formsTitle">2. Інформація про доставку</h2>
+          <div class="aboutDelivery">
+            <div>
+              <input type="radio" id="pickup" name="aboutDelivery" checked>
+              <label for="pickup" class="radioBtn__label"><span class="style"></span> Cамовивіз</label>
+            </div>
+            <div>
+              <input type="radio" id="delivery" name="aboutDelivery">
+              <label for="delivery" class="radioBtn__label"><span class="style"></span> Адресна доставка</label>
+            </div>
+            <div>
+              <input type="radio" id="np" name="aboutDelivery">
+              <label for="np" class="radioBtn__label"><span class="style"></span> Вивіз з відділення НП ( Лише вантажні
+                відділення )</label>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="order__formsTitle">3. Інформація про оплату</h2>
+          <div class="aboutOrder">
+            <input type="radio" id="cash" name="order" checked>
+            <label for="cash" class="radioBtn__label"><span class="style"></span> Готівкою при отриманні</label>
+            <input type="radio" id="card" name="order">
+            <label for="card" class="radioBtn__label"><span class="style"></span> Карткою Visa/Mastercard</label>
+          </div>
+        </section>
+
+        <section class="addComment"> 
+          <input type="checkbox" id="addComment">
+          <label for="addComment" class="addComment__label"><span class="styleCheckbox"></span> Додати коментар</label>
+        </section>
+
+        <section class="orderSummary">
+          <div class="due">До сплати:
+            <span>{{ orderPrice }} грн.</span>
+          </div>
+          <app-btn [nameBtn]="'ОФОРМИТИ ЗАМОВЛЕННЯ'"></app-btn>
+        </section>
+      </form>
+
+      <div class="shopper">
+        <div class="shopper__content">
+          <h3 class="shopper__title">Ваш шопер</h3>
+
+          <app-basket-product></app-basket-product>
+          
+          <div class="total">
+            <p class="total__text">Товарів: <span>{{ amount }} шт.</span></p>
+            <p class="total__text">Сума: <span>{{ orderPrice }} грн.</span></p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,43 @@
+<section class="bestOffers">
+
+  <!-- <div class="swiper-p"></div> -->
+
+  <h2 class="bestOffers__title">Кращі пропозиції</h2>
+  <h3 class="bestOffers__subtitle">НОВИНКИ</h3>
+  <!-- pagination="{ el: '.swiper-p' }" -->
+
+
+  <ion-content>
+    <swiper-container #swiper 
+    hash-navigation-watch-state="true"
+    pagination-clickable="true"
+    autoplay-delay="3500"
+    navigation-prev-el=".button-prev"
+    navigation-next-el=".button-next" 
+    speed="1000"
+    [slidesPerView]="numberReflections" 
+    [spaceBetween]="10" 
+    [loop]="true" 
+    mousewheel="true"
+    loopedSlides="6"
+    >
+      <swiper-slide *ngFor="let item of slides">
+        <img [src]="item.img">
+        <div class="imgContent">
+          <h4 class="slider__title">{{ item.title }}</h4>
+          <span class="slider__price">{{ item.price }}грн.</span>  
+        </div> 
+      </swiper-slide>
+    </swiper-container>
+  </ion-content>
+
+
+  <div class="swiperButtons">
+    <button class="button-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40"><path fill="none" d="M0 0h48v48H0z"/><path d="M40 22H15.66l11.17-11.17L24 8 8 24l16 16 2.83-2.83L15.66 26H40v-4z"/></svg>
+    </button>
+    <button class="button-next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40"><path fill="none" d="M0 0h48v48H0z"/><path d="m24 8-2.83 2.83L32.34 22H8v4h24.34L21.17 37.17 24 40l16-16z"/></svg>
+    </button>
+  </div>
+</section>

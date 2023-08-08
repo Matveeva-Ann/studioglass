@@ -1,0 +1,109 @@
+.articleShowerBoxes {
+  width: calc(100% - 90px);
+  background: rgb(33, 33, 33);
+  padding: 0 0 100px 90px;
+
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 1440px) {
+    width: calc(100% - 71px);
+    padding: 0 0 100px 71px;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
+  @media (max-width: 770px) {
+    width: 100%;
+    padding: 0 0 50px 0px;
+  }
+}
+
+.articleShowerBoxes__title {
+  margin: 0 0 35px 0;
+  font-size: 4.3vw;
+  font-family: "Gina-Thin";
+  font-weight: 100;
+  @media (max-width: 770px) {
+    font-size: 32px;
+  }
+}
+
+.articleShowerBoxes__text {
+  width: 50%;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.5vw;
+  font-family: "Gina-Thin";
+  font-weight: 100;
+  @media (max-width: 1200px) {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+  @media (max-width: 1000px) {
+    width: calc(100% - 30px);
+    padding: 12px 15px 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.articleShowerBoxes__text--wrapper {
+  max-width: 620px;
+  @media (max-width: 1000px) {
+    width: 100%;
+    max-width: calc(620px - 30px);
+  }
+
+}
+
+// .articleShowerBoxes__btn {
+//   display: inline-block;
+//   height: 40px;
+//   max-width: 270px;
+//   width: 100%;
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   color: #fff;
+//   font-size: 14px;
+//   font-family: "Gina-Regular";
+//   font-weight: 400;
+//   letter-spacing: 1.2px;
+//   position: relative;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     width: 85%;
+//     height: 1px;
+//     background-color: #fff;
+//     opacity: 0.4;
+//     transition: width 250ms linear, opacity 250ms linear;
+//   }
+// }
+
+// .articleShowerBoxes__btn:hover::after {
+//   opacity: 1;
+//   width: 100%;
+// }
+
+// .articleShowerBoxes__btn-style {
+//   position: absolute;
+//   right: 20px;
+//   top: 2px;
+// }
+.articleShowerBoxes__img {
+  width: 50%;
+  height: 100%;
+  @media (max-width: 1200px) {
+    width: 52%;
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+}

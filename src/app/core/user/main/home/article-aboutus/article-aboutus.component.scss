@@ -1,0 +1,109 @@
+@import "/src/app/styles/variables";
+@import '/src/app/styles/mixins';
+
+.article {
+  background: rgba(0, 0, 0, 0.9);
+  height: auto;
+  width: 100%;
+  border-bottom: 1px solid $rgb-border;
+}
+.content {
+  padding: 0 0px 140px 91px;
+  display: flex;
+  @media (max-width: 1440px) {
+    padding: 0 0px 140px 71px;
+  }
+  @media (max-width: 990px) {
+    flex-direction: column;
+    padding: 0 0px 70px 71px;
+  }
+  @media (max-width: 770px) {
+    flex-direction: column;
+    padding: 0 0px 20px 0px;
+  }
+  @media (max-width: 500px) {
+    padding: 0;
+  }
+}
+.article__img {
+  width: 55vw;
+  height: 52vw;
+  position: relative;
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: 1;
+  //   bottom: 0;
+  //   right: 0;
+  //   height: 100%;
+  //   width: 60%;
+  //   background: -webkit-gradient(
+  //     linear,
+  //     right top,
+  //     left top,
+  //     from(rgba(0, 0, 0, 0.3)),
+  //     color-stop(75.89%, rgba(0, 0, 0, 0))
+  //   );
+  //   background: -o-linear-gradient(
+  //     right,
+  //     rgba(0, 0, 0, 0.3) 0%,
+  //     rgba(0, 0, 0, 0) 75.89%
+  //   );
+  //   background: linear-gradient(
+  //     -90deg,
+  //     rgba(0, 0, 0, 0.3) 0%,
+  //     rgba(0, 0, 0, 0) 75.89%
+  //   );
+  // }
+
+  @media (max-width: 990px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.article__title {
+  font-size: 4.3vw;
+  font-family: "Gina-Thin";
+  font-weight: 100;
+  line-height: 4.2vw;
+  transform: translateX(-17%);
+
+  margin: 10px 0 45px;
+  padding: 0 5px;
+
+  @media (max-width: 990px) {
+    transform: translate(0%, 30%);
+    margin: 0 0 55px;
+    padding-left: 11px;
+    font-family: "Gina-Light";
+    font-weight: 300;
+  }
+  @media (max-width: 770px) {
+    margin: 0px 0 55px 0;
+    font-size: 32px;
+    line-height: 30px;
+  }
+}
+
+.article__text {
+  font-size: 24px;
+  margin: 20px auto 0;
+  opacity: 0.5;
+  padding: 0 11px;
+  max-width: 510px;
+  @media (max-width: 1600px) {
+    font-size: 1.45vw;
+  }
+  @media (max-width: 990px) {
+    max-width: 100%;
+    font-size: 18px;
+    margin: -10px auto 20px;
+  }
+  @media (max-width: 500px) {
+    max-width: 100%;
+    font-size: 18px;
+    margin: -40px auto 50px;
+  }
+}

@@ -1,0 +1,10 @@
+
+  <ul class="nuv">
+    <li class="nuv__item"  routerLinkActive="active" [ngClass]="{'active': activeTab === 'userData'}" (click)="click('userData')">
+      <a [routerLink]="[ 'userData' ]" class="nuv__link">Особисті дані</a> 
+    </li>
+    <li class="nuv__item" routerLinkActive="active" [ngClass]="{'active': activeTab === 'orderHistory'}" (click)="click('orderHistory')">
+      <a [routerLink]="[ 'orderHistory' ]" class="nuv__link">Історія замовлення</a> 
+    </li>
+  </ul>
+  <app-btn [nameBtn]="'ВИХІД'" style="margin-left: 30px;"></app-btn>

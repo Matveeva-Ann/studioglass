@@ -1,0 +1,13 @@
+
+
+<ul class="cards">
+  <li class="cards__item" *ngFor="let item of allGoodsByCategory">
+    <a [routerLink]="[ '/product/' + item.path + '/' + item.id]" class="cards__itemLink">
+      <img [src]="item.img" [alt]="item.name" class="cards__img">
+      <div class="cards__description">
+        <h3 class="cards__productTitle">{{ item.name }}</h3>
+        <span class="cards__productPrise">{{ item.price }} грн.</span>
+      </div>
+    </a>
+  </li>
+</ul>

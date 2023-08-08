@@ -1,0 +1,14 @@
+<section class="goodsCollaction">
+  <h2 class="goodsCollaction__title" id="collections">Колекція товарів</h2>
+  <ul class="goodsCollaction__list">
+    <li class="goodsCollaction__item" *ngFor="let item of categoriesArr">
+      <a [routerLink]="[ '/product/' + item.path]" class="goodsCollaction__link">
+        <img [src]="item.img" alt="" class="goodsCollaction__img">
+        <div class="goodsCollaction__signature">
+          <span class="goodsCollaction__name">{{ item.name }}</span>
+          <i class="goodsCollaction__arrow"><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.13887 14L16.0005 7L9.14112 0L8.33309 0.822595L13.813 6.41666H0.000488281V7.58334H13.813L8.33083 13.1797L9.13887 14Z" fill="white"></path></svg></i>
+        </div>
+      </a>
+    </li>
+  </ul>
+</section>

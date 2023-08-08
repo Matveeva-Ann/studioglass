@@ -1,0 +1,24 @@
+<ul class="basketProducts">
+
+  <li class="basketProducts__item" *ngFor="let product of productsInBasket">
+    <img [src]="product.img" [alt]="product.name" class="basketProducts__img">
+    <div style="flex-grow: 1;">
+      <h3 class="basketProducts__title">{{ product.name }}</h3>
+      <p class="basketProducts__characteristic">Розмір <span class="basketProducts__characteristic--accent">{{ product.size }}</span></p>
+      <p class="basketProducts__characteristic">Скло <span class="basketProducts__characteristic--accent">Антитравматичне</span></p>
+      <p class="basketProducts__characteristic">Живлення<span class="basketProducts__characteristic--accent">220 В</span></p>
+      <p class="basketProducts__characteristic">Світловий потік <span class="basketProducts__characteristic--accent">2000 Lm\m</span></p>
+      <p class="basketProducts__characteristic">Клас захисту<span class="basketProducts__characteristic--accent">IP 44</span></p>
+      <p class="basketProducts__characteristic">Виробник<span class="basketProducts__characteristic--accent">Studio Glass Україна</span></p>
+      <div class="orderSummary ">
+        <p class="changeQuantity">
+          <span class="changeQuantity__reduce" (click)="reduce(product)">-</span>
+          <span class="changeQuantity__number">{{ product.count }}</span>
+          <span class="changeQuantity__increase" (click)="increase(product)">+</span>
+        </p>
+        <p class="prise">{{ product.price * amount }} грн.</p>
+      </div>
+    </div>
+  </li>
+
+</ul>

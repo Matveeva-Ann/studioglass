@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="header-th">№</th>
+      <th class="header-th">Імя клієнта</th>
+      <th class="header-th">Номер телефону</th>
+      <th class="header-th">Дії</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let elem of dataArr; index as i">
+      <td class="body-td">{{i+1}}</td>
+      <td class="body-td">{{elem.name}}</td>
+      <td class="body-td">{{elem.phoneNumber}}</td>
+      <td class="body-td">
+        <button class="delete body-td-btn" (click)="delete(elem)">Передзвонено</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

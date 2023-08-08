@@ -1,0 +1,37 @@
+
+<div class="container">
+  <form name="goodsForm" [formGroup]="goodsForm" class="goodsForm" (ngSubmit)="addGoods()">
+    <div class="input__wrapper">
+      <select class="input" formControlName="category" (change)="onCategoryChange($event)"> 
+        <option value="*Виберіть категорію" selected disabled>*Виберіть категорію</option>
+        <option [value]="item.category" *ngFor="let item of allCategories">{{ item.category }}</option>
+      </select>
+
+      <input type="text" formControlName="name" class="input" placeholder="*Назва">
+    </div>
+   
+    <textarea formControlName="description" class="input input--textarea" placeholder="*Опис" cols="30" rows="5"></textarea>
+    <div class="input__wrapper">
+      <input type="text" formControlName="size" class="input" placeholder="*Розміри">
+      <input type="text" formControlName="code" class="input" placeholder="*Код товару">
+      <input type="number" formControlName="price" class="input" placeholder="*Ціна">
+    </div>
+  
+
+    <div class="inputFile__wrapper">
+      <ng-container *ngIf="!addedFile; else elseTemplate">  
+        <input type="file" class="inputFile" id="inputFile" (change)="upload($event)">  
+        <label for="inputFile" class="inputFile__label">Додайте файл</label>
+        <mat-progress-bar mode="determinate" value="{{uploadPercent}}" class="progress-bar"></mat-progress-bar>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="inputFile__imgWrapper">
+          <img  [src]="ingUrl" class="inputFile__img">
+          <span class="cross" (click)="deleteImg()">&times;</span>
+        </div>
+      </ng-template>
+    </div>
+ 
+    <button type="submit" class="goodsForm__btn" [disabled]="goodsForm.invalid">{{editStatus ? 'Зберезти зміни' : 'додати новий товар'}}</button> 
+  </form>
+</div>

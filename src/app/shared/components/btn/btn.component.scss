@@ -1,0 +1,42 @@
+@import '/src/app/styles/variables';
+
+.btn {
+  cursor: pointer;
+
+  padding: 0 30px 20px 0;
+
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  letter-spacing: 1.2px;
+  font-size: 14px;
+  color: #fff;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    
+    width: 80%;
+    height: 1px;
+    bottom: 0;
+    right: 0;
+
+    background-color: $rgb-border;
+    transition: width 250ms linear, background-color 250ms linear;
+  }
+}
+
+.btn:hover::after {
+  width: 100%;
+  background-color: #fff;
+}
+
+.btn__style {
+  margin-left: 40px;
+}

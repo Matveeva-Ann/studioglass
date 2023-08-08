@@ -1,0 +1,72 @@
+
+@import "/src/app/styles/mixins";
+@import "/src/app/styles/variables";
+
+.container{
+  height: 100%;
+  margin: 20px 10px;
+}
+.content{
+  padding: 50px 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  user-select: none;
+  margin-bottom: 50px;
+  &-item {
+    list-style: none;
+    border-top: 1px solid $rgb-border;
+    border-right: 1px solid $rgb-border;
+    border-left: 1px solid $rgb-border;
+    border-bottom: 1px solid $rgb-border;
+    transition-duration: 0.1s;
+    max-width: 170px;
+    &-link{
+      display: inline-block;
+      width: calc(100% - 50px);
+      text-decoration: none;
+      color: #fff;
+      padding: 20px 25px;
+      cursor: pointer;
+      letter-spacing: 1.1px;
+      font-size: 18px;
+    }
+  }
+}
+
+.active{
+  border-top: 3px solid white;
+  border-right: 1px solid transparent;
+  font-weight: 500;
+}
+
+.list-item.active > .list-item-link{
+  text-decoration: underline;
+  font-weight: 600;
+  
+}
+
+.list-item{
+  position: relative;
+}
+
+.list-item-callBack{
+  content: '';
+  display: inline-block;
+  position: absolute;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  padding: 0px 8px;
+  right: 4px;
+  top: 4px;
+
+  color: white;
+  background-color: rgba(0, 0, 0, 0.423);
+  box-shadow: 0 4px 12px rgba(19, 78, 137, 0.2), 0 2px 4px rgba(19, 78, 137, 0.2);
+}

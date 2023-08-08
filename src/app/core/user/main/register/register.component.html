@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="content">
+    <div class="register">
+      <h2 class="register__title">Зареєструватись</h2>
+
+      <form class="register__form" [formGroup]="userRegisterForm" (ngSubmit)="register()">
+        <input type="text" class="input" formControlName="name" placeholder="*Ваше і’мя">
+        <input type="email" class="input" formControlName="email" placeholder="*Ваш email">
+        <input type="" class="input" formControlName="phoneNumber" placeholder="*Ваш номер телефону">
+        <input type="password" class="input" formControlName="password" placeholder="*Ваш пароль">
+        <input type="password" class="input" formControlName="repeatPassword" placeholder="*Повторіть пароль">
+
+        <div class="agree__wrapper">
+          <input type="checkbox" id="agree">
+          <label for="agree">Я погоджуюсь з Правилами Користування</label>
+        </div>
+
+        <div class="register__btnWrapper">
+          <a [routerLink]="['/login']" class="register__btnLink">Вже зареєстровані? <span class="register__btnLink--weight">Увійти</span></a>
+          <app-btn [nameBtn]="'ЗАРЕЄСТРУВАТИСЬ'" [disabled]="''"></app-btn>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

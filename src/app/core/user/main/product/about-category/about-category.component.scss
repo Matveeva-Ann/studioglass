@@ -1,0 +1,16 @@
+.container{
+  width: 100%;
+  height: auto;
+  padding: 45px 0;
+  background-color: #F7F7F7;
+}
+.text{
+  max-width: 1115px;
+  width: 100%;
+  padding: 0 12px;
+
+  margin: 0 auto;
+  @media (max-width: 1200px){
+    max-width: calc(100% - 24px);
+  }
+}

@@ -1,0 +1,28 @@
+.container{
+  padding: 2px 20px 7px;
+  background-color: #F7F7F7;
+}
+
+.breadCrumbs__list{
+  display: flex;
+}
+
+.breadCrumbs__link, .breadCrumbs__item{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+.breadCrumbs__item{
+  &:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+
+    width: 10px;
+    height: 1.5px;
+    margin: 4px 10px;
+
+    background-color: #1c1c1c;
+  }
+}

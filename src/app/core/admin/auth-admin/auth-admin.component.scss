@@ -1,0 +1,71 @@
+@import '/src/app/styles/mixins';
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include dimming;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(/assets/img/freedom_girl.jpg!d);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 20%;
+    z-index: -2;
+    filter: blur(5px);
+
+  }
+}
+
+.auth{
+  padding: 50px 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.auth__form{
+  position: relative;
+}
+.auth__cross{
+  cursor: pointer;
+  user-select: none;
+
+  position: absolute;
+  top: -65px;
+  right: -80px;
+
+  font-size: 40px;
+  &:active{
+    transform: translate3d(2px, 2px, 0);
+  }
+}
+.auth__title{
+  margin: 0 0 30px 0;
+
+  font-size: 46px;
+  text-align: center;
+  font-family: 'Gina-Light';
+  font-weight: 300;
+  @media (max-width: 1600px){
+    font-size: 2.8vw;
+  }
+  @media (max-width: 770px){
+    font-size: 26px;
+  }
+}
+.auth__inputsWrapper{
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field{
+  margin-bottom: 20px;
+}

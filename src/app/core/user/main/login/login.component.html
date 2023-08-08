@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="content">
+
+    <div class="login">
+      <h2 class="login__title">Вхід в кабінет</h2>
+      <form class="login__form" [formGroup]="userLoginForm" (submit)="loginUser()">
+        
+     <div class="auth__inputsWrapper">
+        <mat-form-field appearance="outline">
+          <mat-label>*Ваш email</mat-label>
+          <input matInput formControlName="email" type="email" class="email-input" placeholder="*Ваш email" autocomplete="on">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>*Пароль</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="*Пароль" autocomplete="on" >
+        </mat-form-field>
+      </div>
+    
+
+        <div class="popup">
+          <a href="" class="popup__link">Забули пароль?</a>
+          <a [routerLink]="['/register']" class="popup__link">Зареєструватись</a>
+        </div>
+        
+        <app-btn [nameBtn]="'УВІЙТИ В КАБІНЕТ'" [disabled]="''"></app-btn>
+      </form>
+    </div>
+
+    
+
+
+  </div>
+</div>

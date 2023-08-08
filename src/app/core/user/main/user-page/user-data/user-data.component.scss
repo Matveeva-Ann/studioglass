@@ -1,0 +1,84 @@
+.title {
+  font-size: 28px;
+  font-family: "Gina-Light";
+  font-weight: 300;
+
+  margin-bottom: 30px;
+}
+
+.userDataForm {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.userAddressForm {
+  max-width: calc(100% - 50px);
+  padding: 20px;
+  margin: 40px 0;
+
+  background-color: black;
+  border-radius: 10px;
+}
+
+.userDataForm__input {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+
+  font-size: 16px;
+  &:focus {
+    outline: none;
+  }
+}
+.userDataWrapper {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 10px 30px;
+  margin-left: 20px;
+
+  color: #fff;
+  background-color: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  text-transform: uppercase;
+  font-family: "Gina-Light";
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  &:active {
+    transform: translate3d(0, 0.1em, 0);
+  }
+}
+.btn-wrapper{
+  margin-top: 20px;
+}
+.btnAdd{
+  padding: 5px 15px;
+  background-color: rgb(26, 26, 26);
+}
+
+.btnAdd[disabled]{
+  cursor: auto;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: rgba(183, 183, 183, 0.681);
+  &:active {
+    transform: scale(1, 1);
+  }
+}
+.address{
+   font-size: 16px;
+   margin-bottom: 10px;
+}

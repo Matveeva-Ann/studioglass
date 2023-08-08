@@ -1,0 +1,70 @@
+<footer class="footer" [ngClass]="{'whiteBackground': isProductPage}">
+  <div class="wrapper" [ngClass]="isProductPage ? 'black-text' : 'white-text'">
+    <div class="blockMain" [ngClass]="{'borderColor': isProductPage}">
+      <ul class="goods">
+        <li class="goods__item" *ngFor="let item of categoriesArr">
+          <a 
+          [routerLink]="[ '/product/' + item.path]" 
+          class="goods__link"  
+          [ngClass]="isProductPage ? 'black-text' : 'white-text'"
+          >{{ item.name }}</a>
+        </li>
+      </ul>
+ 
+      <ul class="aboutUs">
+        <li class="aboutUs__item"><a href="" class="goods__aboutUs"  [ngClass]="isProductPage ? 'black-text' : 'white-text'">Контакти</a></li>
+        <li class="aboutUs__item"><a href="" class="goods__aboutUs"  [ngClass]="isProductPage ? 'black-text' : 'white-text'">Про Studio Glass</a></li>
+        <li class="aboutUs__item"><a href="" class="goods__aboutUs"  [ngClass]="isProductPage ? 'black-text' : 'white-text'">Оплата та доставка</a></li>
+        <li class="aboutUs__item"><a href="" class="goods__aboutUs"  [ngClass]="isProductPage ? 'black-text' : 'white-text'">Питання та відповіді</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__blockContacts" [ngClass]="{'borderColor': isProductPage}">
+      <ul class="contacts">
+        <li class="contacts__item">
+          <address class="contacts__wrapper">
+            <span class="contacts--itemName">e-mail</span>
+            <a href="mailto:sglass.supp@gmail.com" class="contacts__link" [ngClass]="isProductPage ? 'black-text__link' : 'white-text'">sglass.supp@gmail.com</a>
+          </address>
+        </li>
+        <li class="contacts__item">
+          <address class="contacts__wrapper">
+            <span class="contacts--itemName">адреса</span>  Львівський район с.Сокільники вулиця Авіаційна, 70
+          </address>
+        </li>
+        <li class="contacts__item">
+          <div class="contacts__wrapper">
+            <span class="contacts--itemName">графік</span>
+            <time> Пн-Пт: 09:00-18:00 <br> Сб-Нд: Вихідний </time>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="customers" [ngClass]="{'borderColor': isProductPage}">
+    <h3 class="customers__title">Нам довіряють:</h3>
+    <ul class="customers__list">
+      <li class="customers__item"><a href="" class="customers__link"><img src="/assets/img/mc.png" alt=""  class="customers__img"></a></li>
+      <li class="customers__item"><a href="" class="customers__link"><img src="/assets/img/mzh.png" alt=""  class="customers__img"></a></li>
+      <li class="customers__item"><a href="" class="customers__link"><img src="/assets/img/ns.png" alt=""  class="customers__img"></a></li>
+      <li class="customers__item"><a href="" class="customers__link"><img src="/assets/img/fr.png" alt=""  class="customers__img"></a></li>
+    </ul>
+  </div>
+
+  <div class="additionalInfo">
+    <p class="additionalInfo__item" [ngClass]="isProductPage ? 'black-text' : 'white-text'">&#169; Sudio Glass 2023</p>
+    <p class="additionalInfo__item"><a [routerLink]="['oferta']" class="additionalInfo__link" [ngClass]="isProductPage ? 'black-text' : 'white-text'">Політика Конфіденційності</a></p>
+    <ul class="additionalInfo__item additionalInfo__list">
+      <li class="additionalInfo__listItem"><img src="/assets/img/card-img-1.webp" alt=""></li>
+      <li class="additionalInfo__listItem"><img src="/assets/img/card-img-2.webp" alt=""></li>
+      <li class="additionalInfo__listItem"><img src="/assets/img/card-img-3.webp" alt=""></li>
+      <li class="additionalInfo__listItem"><img src="/assets/img/card-img-4.webp" alt=""></li>
+    </ul>
+    <p class="additionalInfo__item" [ngClass]="isProductPage ? 'black-text' : 'white-text'">Розробка сайтів: <span>Anna Matveeva</span></p>
+
+  </div>
+
+
+</footer>

@@ -1,0 +1,23 @@
+<div class="container" (click)="closeWindow()">
+  <div class="auth" (click)="stopPropagation($event)">
+    <form action="" class="auth__form"  [formGroup]="adminLoginForm"> 
+      <span class="auth__cross" (click)="closeWindow()">&times;</span>
+      <h2 class="auth__title">Вхід для адміністратора</h2>
+
+      <div class="auth__inputsWrapper">
+        <mat-form-field appearance="outline">
+          <mat-label>*Ваш email</mat-label>
+          <input matInput formControlName="email" type="email" class="email-input" placeholder="*Ваш email" autocomplete="on">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>*Пароль</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="*Пароль" autocomplete="on" >
+        </mat-form-field>
+      </div>
+    
+      <app-btn-link [btnName]="'Увійти в кабінет'" (click)="loginAdmin()"></app-btn-link>
+
+    </form>
+  </div>
+
+</div>

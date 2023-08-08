@@ -1,0 +1,29 @@
+<div class="container"  (click)="closeWindow()">
+  <div class="content" (click)="stopPropagation($event)">
+    <span class="cross" (click)="closeWindow()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 101 101" fill="white">
+        <path d="M83.9 17.1c-.9-.9-2.5-.9-3.4 0l-30 30-30-30c-.9-.9-2.5-.9-3.4 0s-.9 2.5 0 3.4l30 30-30 30c-.9.9-.9 2.5 0 3.4.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7l30-30 30 30c.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7.9-.9.9-2.5 0-3.4l-30-30 30-30c.9-.9.9-2.4 0-3.4z"/>
+      </svg>      
+    </span>
+    <div class="information">
+      <h2 class="information__title">Заповніть, будь ласка, форму!</h2>
+      <p class="information__subtitle">Залиште свій номер телефону і наші менеджери якомога <br> швидше зв'яжуться з Вами</p>
+
+      <form [formGroup]="willCallForm" (ngSubmit)="sendPhoneNumber()">
+        <div class="inputs">
+          <mat-form-field appearance="outline">
+            <mat-label>*Ваше ім’я</mat-label>
+            <input matInput formControlName="name" placeholder="*Ваше ім’я">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>*Ваш номер телефону</mat-label>
+            <input matInput formControlName="phoneNumber" placeholder="*Ваш номер телефону">
+          </mat-form-field>
+        </div>
+        <app-btn [nameBtn]="'НАДІСЛАТИ'" [disabled]="''"></app-btn>
+      </form>
+      
+
+    </div>
+  </div>
+</div>

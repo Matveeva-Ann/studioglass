@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.addGood {
+  cursor: pointer;
+  align-self: flex-end;
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 250ms linear;
+
+  margin-top: 10px;
+  margin-bottom: -10px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}

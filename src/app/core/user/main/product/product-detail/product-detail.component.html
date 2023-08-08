@@ -1,0 +1,52 @@
+<div class="container">
+  <app-bread-crumbs [categoryTitle]="categoryTitle" [productTitle]="productTitle"></app-bread-crumbs>
+
+  <div class="product">
+    <img [src]="productById?.img" alt="" class="product__img">
+    <div class="product__text">
+      <p>Код: <span>{{productById?.code}}</span></p>
+      <h2>{{productById?.name}}</h2>
+      <p>Для створення кожної моделі душової системи ми використовуємо виключно зразки Європейського виробництва, що мають ґатунок якості EU1. SAINT-GOBAIN float glass, SAINT-GOBAIN SATINOVO MATT - це основні варіації скла, котрі вже давно запали до душі нашим клієнтам. Товщина становить 8 мм, завдяки чому конструкція більш стійка до зовнішніх подразників.</p>
+     
+      <app-quantity-counter [size]="2000" (newSize)="newSize($event)" name="Висота"></app-quantity-counter>
+      <app-quantity-counter [size]="650" (newSize)="newSize($event)"  name="Ширина лівого габариту"></app-quantity-counter>
+      <app-quantity-counter [size]="650" (newSize)="newSize($event)"  name="Ширина правого габариту"></app-quantity-counter>
+      <app-quantity-counter [size]="900" (newSize)="newSize($event)"  name="Ширина лівого габариту"></app-quantity-counter>
+      <app-quantity-counter [size]="900" (newSize)="newSize($event)"  name="Ширина правого габариту"></app-quantity-counter>
+
+      <div class="addOptions">
+        <p class="addOptions__text">Ви можете додати цікаві опції</p>
+        <a [routerLink]="[ '/']" class="addOptions__link">Додаткові опції
+          <svg id="SvgjsSvg1011" width="20" height="20" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"><defs id="SvgjsDefs1012"></defs><g id="SvgjsG1013"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="288" height="288"><path d="M1 26h43.586l-6.293 6.293 1.414 1.414L48.414 25l-8.707-8.707-1.414 1.414L44.586 24H1z" fill="#ffffff" class="color000 svgShape"></path></svg></g></svg>
+        </a>
+      </div>
+
+      <div class="optionsPrice">
+        <p class="optionsPrice__prise">{{ productById?.price }} грн</p>
+        <div class="optionsPrice__itemWrapper">
+          <div class="changeQuantity">  
+            <span class="changeQuantity__reduce" (click)="reduce()">-</span>
+            <span class="changeQuantity__number">{{ count }}</span>
+            <span class="changeQuantity__increase" (click)="increase()">+</span>
+          </div>
+          <button type="button" class="optionsPrice__btnAdd" (click)="addProduct()">В шопер
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32"><path d="M6 30a2 2 1080 1 0 4 0 2 2 1080 1 0-4 0zm18 0a2 2 1080 1 0 4 0 2 2 1080 1 0-4 0zM-.058 5a1 1 0 0 0 1 1H3.02l1.242 5.312L6 20c0 .072.034.134.042.204l-1.018 4.58A.997.997 0 0 0 6 26h22.688a1 1 0 0 0 0-2H7.248l.458-2.06c.1.016.19.06.294.06h18.23c1.104 0 1.77-.218 2.302-1.5l3.248-9.964C32.344 8.75 31.106 8 30 8H6c-.156 0-.292.054-.438.088l-.776-3.316A1 1 0 0 0 3.812 4H.942a1 1 0 0 0-1 1zm6.098 5h23.81l-3.192 9.798c-.038.086-.07.148-.094.19-.066.006-.17.012-.334.012H8v-.198l-.038-.194L6.04 10z"/></svg>
+          </button>
+          <a [routerLink]="[ '/']" class="consultation">Замовити консультацію  
+            <svg id="SvgjsSvg1011" width="20" height="20" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs">
+              <defs id="SvgjsDefs1012"></defs>
+              <g id="SvgjsG1013">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="288" height="288">
+                  <path d="M1 26h43.586l-6.293 6.293 1.414 1.414L48.414 25l-8.707-8.707-1.414 1.414L44.586 24H1z" fill="#000000" class="color000 svgShape"></path>
+                </svg>
+              </g>
+            </svg>
+          </a>
+        </div>
+     
+      </div>
+    </div>
+  </div>
+  
+
+</div>
