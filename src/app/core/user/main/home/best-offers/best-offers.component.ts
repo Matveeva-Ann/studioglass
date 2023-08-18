@@ -1,11 +1,10 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { register } from 'swiper/element/bundle';
-register();
-import Swiper from 'swiper';
-import { CategoriesService } from 'src/app/shared/services/categories/categories.service';
 import { GoodsService } from 'src/app/shared/services/goods/goods.service';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 
+import Swiper from 'swiper';
+register();
 
 @Component({
   selector: 'app-best-offers',

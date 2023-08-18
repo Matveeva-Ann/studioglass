@@ -1,6 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
-import { GoodsService } from 'src/app/shared/services/goods/goods.service';
 
 @Component({
   selector: 'app-all-category-product',

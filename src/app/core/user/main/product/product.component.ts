@@ -1,4 +1,4 @@
-import { Component, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 import { GoodsService } from 'src/app/shared/services/goods/goods.service';
@@ -11,7 +11,6 @@ import { GoodsService } from 'src/app/shared/services/goods/goods.service';
 export class ProductComponent {
   public goodsArr: IGoodsResponse[] = [];
   public categoryTitle = '';
-
 
   constructor(
     public goodsService:GoodsService,

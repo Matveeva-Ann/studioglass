@@ -17,7 +17,6 @@ export class AdminNavComponent {
     public router: Router,
     private callBackService: CallBackService,
     private orderService: OrderService,
-
   ){}
 
   ngOnInit(): void {
@@ -44,6 +43,5 @@ export class AdminNavComponent {
     this.router.navigate(['/']);
     localStorage.removeItem('currentUser');
   }
-
 
 }

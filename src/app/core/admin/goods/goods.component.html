@@ -2,14 +2,7 @@
   <button class="addGood" (click)="toggleForm()">ДОДАТИ ПРОДУКТ</button>
   <ng-container *ngIf="openForm">
     <app-goods-form [editProduct]="editProduct" (productHasBeenEdited)="productHasBeenEdited()"></app-goods-form>
-    <!-- <app-goods-form [editProduct]="editProduct" (addChangProduct)="addChangProduct()"></app-goods-form> -->
   </ng-container>
 
   <app-goods-table (sendEditProduct)="sendEditProduct($event)"></app-goods-table>
-  <!-- <div class="addPromotion" (click)="addCategoryBtn()">додати продукт</div>
-  <ng-container *ngIf="openForm">
-    <app-goods-form [editProduct]="editProduct" (addChangProduct)="addChangProduct()"></app-goods-form>
-  </ng-container>
-  <app-goods-table (sendEditProduct)="sendEditProduct($event)" [productChanged]="productChanged" (changeStatusProductChanged)="changeStatusProductChanged()"></app-goods-table> -->
-
 </div>

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
-import { GoodsService } from 'src/app/shared/services/goods/goods.service';
-// import { EventEmitter } from 'stream';
+import { GoodsService } from 'src/app/shared/services/goods/goods.service';;
 
 @Component({
   selector: 'app-goods-table',

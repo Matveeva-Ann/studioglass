@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { IGoodsRequest, IGoodsResponse } from 'src/app/shared/interface/goods-interface';
+import { IGoodsRequest } from 'src/app/shared/interface/goods-interface';
 import { AddProductService } from 'src/app/shared/services/subjects/add-product/add-product.service';
 import { LocalStorageSubjectService } from 'src/app/shared/services/subjects/local-storage-subject/local-storage-subject.service';
 

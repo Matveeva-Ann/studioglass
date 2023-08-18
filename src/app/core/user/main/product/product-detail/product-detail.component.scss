@@ -1,7 +1,5 @@
-
-.container{
+.container {
   padding: 91px 0 0 91px;
-
 
   @media (max-width: 1440px) {
     padding: 71px 0px 0 71px;
@@ -10,35 +8,33 @@
     padding: 50px 0px 0px;
   }
 }
-app-bread-crumbs{
+app-bread-crumbs {
   @media (max-width: 1000px) {
     display: none;
   }
 }
 
-.product{
+.product {
   display: flex;
   color: black;
 }
-.product__img{
+.product__img {
   width: 50%;
   height: 100%;
   margin-bottom: 20px;
 }
-.product__text{
+.product__text {
   max-width: 650px;
   width: 100%;
   margin: 0 auto;
   padding: 10px 10px 0 10px;
 }
 
-
-
-.addOptions{
+.addOptions {
   padding: 20px;
-  margin:30px 0;
+  margin: 30px 0;
 
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   color: #fff;
 
   display: flex;
@@ -46,34 +42,35 @@ app-bread-crumbs{
   align-items: center;
   flex-wrap: wrap;
 }
-.addOptions__text, .addOptions__link{
+.addOptions__text,
+.addOptions__link {
   color: #fff;
   font-size: 20px;
-  font-family: 'Gina-Regular';
+  font-family: "Gina-Regular";
   font-weight: 400;
   margin: 0;
 }
-.addOptions__link{
+.addOptions__link {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
-  & > svg{
+  & > svg {
     margin-left: 10px;
     vertical-align: bottom;
   }
 }
 
-.optionsPrice{
+.optionsPrice {
   margin-bottom: 30px;
 }
 
-.optionsPrice__prise{
+.optionsPrice__prise {
   font-size: 24px;
-  font-family: 'Gina-Regular';
+  font-family: "Gina-Regular";
   font-weight: 400;
 }
 
-.changeQuantity{
+.changeQuantity {
   display: flex;
 }
 .changeQuantity__reduce,
@@ -90,11 +87,11 @@ app-bread-crumbs{
   font-weight: 600;
   line-height: 23px;
   text-align: center;
-  transition: background-color 250ms linear ;
-  &:active{
+  transition: background-color 250ms linear;
+  &:active {
     transform: translate3d(0, 0.05em, 0);
   }
-  &:hover{
+  &:hover {
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
   }
@@ -108,35 +105,35 @@ app-bread-crumbs{
   font-family: "Gina-Regular";
   font-weight: 400;
 }
-.optionsPrice__itemWrapper{
+.optionsPrice__itemWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.optionsPrice__btnAdd{
+.optionsPrice__btnAdd {
   cursor: pointer;
   padding: 13px 15px;
   border: 1px solid black;
 
   text-transform: uppercase;
   background-color: transparent;
-  &:active{
+  &:active {
     transform: translate3d(0, 0.05em, 0);
   }
-  & > svg{
+  & > svg {
     margin-left: 20px;
     vertical-align: bottom;
   }
 }
 
-.consultation{
+.consultation {
   font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
   font-family: "Gina-Regular";
   font-weight: 400;
-  color: #1C1C1C;
-  & > svg{
+  color: #1c1c1c;
+  & > svg {
     vertical-align: bottom;
     margin-left: 20px;
   }

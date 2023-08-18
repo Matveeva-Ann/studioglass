@@ -1,9 +1,8 @@
-import { Component, ElementRef, SimpleChanges, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ICategoryResponse } from 'src/app/shared/interface/category-interface';
 import { register } from 'swiper/element/bundle';
 import { CategoriesService } from 'src/app/shared/services/categories/categories.service';
 register();
-import Swiper from 'swiper';
 
 @Component({
   selector: 'app-hero',
@@ -54,7 +53,6 @@ export class HeroComponent {
           elem.name !== 'Shower Boxes' &&
           elem.name !== 'Led Mirrors'
       );
-      console.log(filteredData)
       if (filteredData.length > 0) {
         const newSlides = filteredData.map((elem) => ({
           img: elem.banner,

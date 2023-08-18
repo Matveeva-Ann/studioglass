@@ -11,13 +11,10 @@ export class ProductCardComponent {
   @Input() goodsArr: IGoodsResponse[] = [];
   public allGoodsByCategory: IGoodsResponse[] = [];
 
-
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['goodsArr']){
       this.allGoodsByCategory = this.goodsArr;
-     console.log(this.allGoodsByCategory)
     }
-    
   }
   
 }

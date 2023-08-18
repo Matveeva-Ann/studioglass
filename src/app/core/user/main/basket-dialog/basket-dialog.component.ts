@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, SimpleChanges } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 import { LocalStorageSubjectService } from 'src/app/shared/services/subjects/local-storage-subject/local-storage-subject.service';
 

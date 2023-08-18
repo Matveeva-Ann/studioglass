@@ -18,7 +18,6 @@ export class AuthAdminComponent {
     private auth: Auth,
     private fb: FormBuilder,
     private afs: Firestore,
-
   ){}
 
   ngOnInit(): void {
@@ -45,17 +44,14 @@ export class AuthAdminComponent {
       console.log('login done')
     }).catch(e=>{
       console.log('error', e)
-      // this.toastr.error('Перевірте правильність заповнення полів');
     })
   }
 
   async login( email:string, password: string): Promise<void>{
     const credential = await signInWithEmailAndPassword(this.auth, email, password);
-    console.log(credential)
     const authSub= docData(doc(this.afs, 'users', credential.user.uid)).subscribe(user => {
       const currentUser = { ...user, uid: credential.user.uid };
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
-      console.log(currentUser)
       if(user['role'] === ROLE.ADMIN) {
         this.router.navigate(['/admin/goods'])
       } else {

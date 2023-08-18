@@ -1,8 +1,7 @@
-import { Component, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 import { GoodsService } from 'src/app/shared/services/goods/goods.service';
-import { AddProductService } from 'src/app/shared/services/subjects/add-product/add-product.service';
 import { LocalStorageSubjectService } from 'src/app/shared/services/subjects/local-storage-subject/local-storage-subject.service';
 
 @Component({
@@ -70,8 +69,5 @@ export class ProductDetailComponent {
       this.localStorageSubject.localStorage$.next();
      this.count = 1;
   }
-
-
-
 
 }

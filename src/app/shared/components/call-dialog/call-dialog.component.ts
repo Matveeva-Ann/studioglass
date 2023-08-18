@@ -36,7 +36,6 @@ export class CallDialogComponent {
   }
 
   public sendPhoneNumber() {
-    console.log(this.willCallForm.value)
     this.callBackService.sendPhoneNumber(this.willCallForm.value).then();
     this.willCallForm.reset();
     this.closeWindow();

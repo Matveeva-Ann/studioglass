@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { deleteObject, getDownloadURL, percentage, ref, Storage, uploadBytesResumable } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CategoriesService } from 'src/app/shared/services/categories/categories.service';
 import { GoodsService } from 'src/app/shared/services/goods/goods.service';
 import { ICategoryResponse } from 'src/app/shared/interface/category-interface';
@@ -37,7 +36,6 @@ export class GoodsFormComponent {
   ngOnInit(): void {
     this.initForm();
     this.categoriesService.getCategory().subscribe((data)=>{
-      console.log(data)
       this.allCategories = data as Array<ICategoryResponse>;
     })
   }
@@ -143,6 +141,5 @@ export class GoodsFormComponent {
       this.uploadPercent = 0;
     })
   }
-
 
 }

@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 
 @Component({

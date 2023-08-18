@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { CallDialogComponent } from 'src/app/shared/components/call-dialog/call-dialog.component';
 import { ICategoryResponse } from 'src/app/shared/interface/category-interface';
 import { CategoriesService } from 'src/app/shared/services/categories/categories.service'; 
 
@@ -21,8 +19,6 @@ export class MenuComponent {
   closeWindow(event: boolean){
     this.openModalWindow = false;
   }
-
-
   constructor(
     private categoriesService:CategoriesService
   ){}

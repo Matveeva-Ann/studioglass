@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GoodsCollectionComponent } from './core/user/main/home/goods-collection/goods-collection.component';
 import { OrderPageComponent } from './core/user/main/order-page/order-page.component';
 import { PaymentDeliveryComponent } from './core/user/main/payment-delivery/payment-delivery.component';
 import { ProductDetailComponent } from './core/user/main/product/product-detail/product-detail.component';
 import { ProductComponent } from './core/user/main/product/product.component';
-import { UserPageComponent } from './core/user/main/user-page/user-page.component';
 import { AuthAdminGuardGuard } from './shared/guards/AuthAdminGuard/auth-admin-guard.guard';
 import { AuthUserPageGuardGuard } from './shared/guards/AuthUserPageGuard/auth-user-page-guard.guard';
-// import { CollectionsProductComponent } from './core/user/main/collections-product/collections-product.component';
 
 const routes: Routes = [
   {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';;
-import { signInWithEmailAndPassword, Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
-import { doc, docData, Firestore, setDoc } from '@angular/fire/firestore';
+import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { doc, Firestore, setDoc } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -17,7 +17,6 @@ export class RegisterComponent {
     private auth: Auth,
     private fb: FormBuilder,
     private afs: Firestore,
-
   ){}
 
   ngOnInit(): void {
@@ -25,7 +24,6 @@ export class RegisterComponent {
   }
 
   initForm(){
-
     this.userRegisterForm = this.fb.group({
       name: [null, [Validators.required]],
       secondName: [null, Validators.required],
@@ -35,6 +33,7 @@ export class RegisterComponent {
       repeatPassword: [null, [Validators.required]],
     })
   }
+  
   register():void {
     if (this.userRegisterForm.value.password !== this.userRegisterForm.value.repeatPassword){
       return;
