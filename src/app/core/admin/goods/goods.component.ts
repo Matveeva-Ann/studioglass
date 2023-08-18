@@ -1,4 +1,5 @@
-import { Component, SimpleChanges } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 
 @Component({
   selector: 'app-goods',
@@ -7,9 +8,18 @@ import { Component, SimpleChanges } from '@angular/core';
 })
 export class GoodsComponent {
   public openForm = false;
+  public editProduct?: IGoodsResponse; 
 
   toggleForm(){
     this.openForm = !this.openForm;
-    console.log( this.openForm)
+  }
+
+  sendEditProduct(product: IGoodsResponse){
+    this.editProduct = product;
+    this.openForm = true;
+  }
+  productHasBeenEdited(){
+    this.editProduct = undefined;
+    this.openForm = false;
   }
 }

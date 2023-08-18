@@ -2,6 +2,8 @@ import { Component, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 import { GoodsService } from 'src/app/shared/services/goods/goods.service';
+import { AddProductService } from 'src/app/shared/services/subjects/add-product/add-product.service';
+import { LocalStorageSubjectService } from 'src/app/shared/services/subjects/local-storage-subject/local-storage-subject.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,7 +20,7 @@ export class ProductDetailComponent {
   constructor(
     private goodsService: GoodsService,
     private activatedRoute: ActivatedRoute,
-
+    private localStorageSubject: LocalStorageSubjectService
   ){}
 
   ngOnInit(): void {
@@ -35,15 +37,12 @@ export class ProductDetailComponent {
     this.count++;
   }
 
-
-
  getGoodById():void{
     const goodId = this.activatedRoute.snapshot.paramMap.get('id') as string;
     this.goodsService.getOneGood(goodId).subscribe((data)=>{
       this.productById = data as IGoodsResponse;
       this.categoryTitle = data['category'];
       this.productTitle = data['name'];
-      console.log( this.productById)
     })
   }
   newSize(event: any){
@@ -68,6 +67,7 @@ export class ProductDetailComponent {
           basket.push(addedProduct);
         }
       localStorage.setItem('basket', JSON.stringify(basket));
+      this.localStorageSubject.localStorage$.next();
      this.count = 1;
   }
 

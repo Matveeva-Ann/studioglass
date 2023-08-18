@@ -1,0 +1,101 @@
+@import "/src/app/styles/variables";
+@import "/src/app/styles/mixins";
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.btn {
+  border: none;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.086);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s;
+  padding: 10px 20px;
+  font-size: 15px;
+  user-select: none;
+  margin: 5px;
+  text-align: start;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: translate3d(0, 0.1em, 0);
+  }
+}
+.btn-work {
+  margin-top: 20px;
+  color: rgb(23, 33, 39);
+}
+.btn-done {
+  color: rgb(28, 0, 9);
+}
+
+.red {
+  color: rgb(141, 0, 0);
+  font-weight: 600;
+}
+.green {
+  color: rgba(44, 44, 44, 0.61);
+}
+
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+  background: transparent;
+
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+  background: transparent;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  min-height: 104px;
+}
+
+.example-element-symbol {
+  line-height: normal;
+  & > span {
+    font-weight: bold;
+  }
+}
+.example-element-position,
+.example-element-name,
+.example-element-weight {
+  & > span {
+    font-weight: bold;
+  }
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}

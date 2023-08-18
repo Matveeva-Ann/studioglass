@@ -8,9 +8,12 @@
   max-width: 1115px;
   width: 100%;
   padding: 0 12px;
-
-  margin: 0 auto;
+  margin: 0 auto 10px;
+  font-size: 20px;
   @media (max-width: 1200px){
     max-width: calc(100% - 24px);
+  }
+  @media (max-width: 1000px){
+    font-size: 18px;
   }
 }

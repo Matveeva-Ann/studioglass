@@ -16,14 +16,11 @@ export class GoodsCollectionComponent {
 
   ngOnInit(): void {
    this.getAllCategories();
-   console.log(this.categoriesArr)
   }
 
   getAllCategories(){
     this.categoriesService.getCategory().subscribe((data) =>{
       this.categoriesArr = data as ICategoryResponse[];
-      console.log(this.categoriesArr)
-
     })
   }
 }

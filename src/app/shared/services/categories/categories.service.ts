@@ -28,4 +28,9 @@ export class CategoriesService {
     const categoryDocRef = doc(this.afs, `categories/${id}`);
     return deleteDoc(categoryDocRef);
   }
+  
+  updateCategory(category: ICategoryRequest, id: string) {
+    const categoryDocRef = doc(this.afs, `categories/${id}`);
+    return updateDoc(categoryDocRef, { ...category });
+  }
 }

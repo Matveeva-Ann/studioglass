@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
+import { LocalStorageSubjectService } from 'src/app/shared/services/subjects/local-storage-subject/local-storage-subject.service';
 
 @Component({
   selector: 'app-basket-product',
@@ -12,9 +13,15 @@ export class BasketProductComponent {
   @Output() amountProducts = new EventEmitter<number>();
   @Output() totalPrice = new EventEmitter<number>();
 
-  public amount = 1;
+  constructor(
+    private localStorageSubjectService: LocalStorageSubjectService,
+  ){}
 
   ngOnInit(): void {
+   this.updateBasket();
+  }
+
+  updateBasket(){
     this.productsInBasket = JSON.parse(
       localStorage.getItem('basket') as string
     );
@@ -40,5 +47,12 @@ export class BasketProductComponent {
     this.amountProducts.emit(amount);
   }
 
+  removeUnit(product: any){
+    let productsInLS: Array<IGoodsResponse> = JSON.parse(localStorage.getItem('basket') as string);
+    productsInLS = productsInLS.filter(item => item.id !== product.id);
+    localStorage.setItem('basket', JSON.stringify(productsInLS));
+    this.updateBasket();
+    this.localStorageSubjectService.localStorage$.next();
+  }
 
 }

@@ -29,8 +29,10 @@ export class UserDataComponent {
     this.address = !this.address;
   }
   initForm():void{
+  
     this.userDataForm = this.fb.group({
       userName: [null, [Validators.required]],
+      userSecondName: [null, Validators.required ],
       userPhone: [null, [Validators.required]],
       userEmail: [null, [Validators.required]],
     })
@@ -40,6 +42,7 @@ export class UserDataComponent {
     if(currentUser !== null && currentUser.role === 'USER'){
       this.userDataForm.setValue({
       userName: currentUser.name,
+      userSecondName: currentUser.secondName,
       userPhone: currentUser.phoneNumber,
       userEmail: currentUser.email,
       })
@@ -55,15 +58,16 @@ export class UserDataComponent {
       apartmentNumber: [null],
     })
   }
+
   addNewAddress(){
     const currentUser = JSON.parse( localStorage.getItem('currentUser') as string );
     const userId = currentUser.uid;
-    console.log(userId)
     const newAddress = `місто:${this.userAddressForm.value.city}, ${this.userAddressForm.value.regional} область, вул. ${this.userAddressForm.value.street}, ${this.userAddressForm.value.houseNumber}, кв.${this.userAddressForm.value.apartmentNumber}`
     this.address = false;
     const userData = {
       email: currentUser.email,
       name: currentUser.name,
+      secondName: currentUser.secondName,
       phoneNumber: currentUser.phoneNumber,
       orders: [],
       role: "USER",

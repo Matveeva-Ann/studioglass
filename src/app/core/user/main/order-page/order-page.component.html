@@ -4,16 +4,16 @@
     <h2 class="order__title">Оформлення замовлення</h2>
 
     <div class="order__forms">
-      <form action="" class="userForm">
+      <form [formGroup]="orderForm" class="userForm" (submit)="addOrder()">
         <section>
           <h2 class="order__formsTitle">1. Контактні дані</h2>
           <div class="inputGroup">
-            <input type="text" class="inputField" placeholder="*Ваше ім’я">
-            <input type="text" class="inputField" placeholder="*Ваше прізвище">
+            <input type="text" class="inputField" placeholder="*Ваше ім’я" formControlName="name">
+            <input type="text" class="inputField" placeholder="*Ваше прізвище" formControlName="secondName">
           </div>
           <div class="inputGroup order--distance">
-            <input type="text" class="inputField" placeholder="*Ваш email">
-            <input type="text" class="inputField" placeholder="*Ваш номер телефону">
+            <input type="text" class="inputField" placeholder="*Ваш email" formControlName="email">
+            <input type="text" class="inputField" placeholder="*Ваш номер телефону" formControlName="phoneNumber">
           </div>
         </section>
 
@@ -21,17 +21,62 @@
           <h2 class="order__formsTitle">2. Інформація про доставку</h2>
           <div class="aboutDelivery">
             <div>
-              <input type="radio" id="pickup" name="aboutDelivery" checked>
+              <input type="radio" id="pickup" value="самовивіз" name="methodDelivery" formControlName='methodDelivery'
+                checked>
               <label for="pickup" class="radioBtn__label"><span class="style"></span> Cамовивіз</label>
+
+              <mat-select name="pickUpAddress" formControlName="pickUpAddress"
+                *ngIf="this.orderForm.value['methodDelivery'] === 'самовивіз' " class="black-background custom-select-style">
+                <mat-option value="Головний офіс">Головний офіс - Львів, вулиця Авіаційна, 70</mat-option>
+                <mat-option value=" Фірмовий магазин в ТЦ 'ТРИ СЛОНИ'">
+                  Фірмовий магазин в ТЦ "ТРИ СЛОНИ" вулиця Городоцька, Львів, Lviv oblast, 81110
+                </mat-option>
+                <mat-option value=" Фірмовий магазин в ТЦ 'MARK'">
+                  Фірмовий магазин в ТЦ "MARK" Львів, вул. Княгині Ольги, 95                          
+                </mat-option>
+                <mat-option value="Фірмовий магазин в ТЦ '4ROOM'">
+                  Фірмовий магазин в ТЦ "4ROOM" Київ, с. Петропавлівська Борщагівка, вул. Петропавлівська, 6
+                </mat-option>
+              </mat-select>
+
             </div>
             <div>
-              <input type="radio" id="delivery" name="aboutDelivery">
+              <input type="radio" id="delivery" value="адресна доставка" name="methodDelivery"
+                formControlName='methodDelivery'>
               <label for="delivery" class="radioBtn__label"><span class="style"></span> Адресна доставка</label>
+
+              <div class="wrapperFormField" *ngIf="this.orderForm.value['methodDelivery'] === 'адресна доставка'">
+                <mat-form-field appearance="outline">
+                  <mat-label>Місто*</mat-label>
+                  <input matInput formControlName="userCity">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Вулиця*</mat-label>
+                  <input matInput formControlName="userStreet">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Номер будинку*</mat-label>
+                  <input matInput formControlName="userHouse">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Квартира*</mat-label>
+                  <input matInput formControlName="userFlat">
+                </mat-form-field>
+              </div>
+
             </div>
             <div>
-              <input type="radio" id="np" name="aboutDelivery">
+              <input type="radio" id="np" value="відділення НП" name="methodDelivery" formControlName='methodDelivery'>
               <label for="np" class="radioBtn__label"><span class="style"></span> Вивіз з відділення НП ( Лише вантажні
                 відділення )</label>
+
+              <div class="wrapperFormField" *ngIf="this.orderForm.value['methodDelivery'] === 'відділення НП'">
+                <input type="text" class="inputStyle" placeholder="Населений пункт">
+                <mat-select name="pickUpAddress" formControlName="numberNP" class="black-background">
+                  <mat-option value="відділення">Відділення</mat-option>
+                  <mat-option value="{{ elem }}" *ngFor="let elem of numbersNP">{{ elem }}</mat-option>
+                </mat-select>
+              </div>
             </div>
           </div>
         </section>
@@ -39,16 +84,21 @@
         <section>
           <h2 class="order__formsTitle">3. Інформація про оплату</h2>
           <div class="aboutOrder">
-            <input type="radio" id="cash" name="order" checked>
+            <input type="radio" id="cash" name="methodPay" value="готівка" checked formControlName="methodPay">
             <label for="cash" class="radioBtn__label"><span class="style"></span> Готівкою при отриманні</label>
-            <input type="radio" id="card" name="order">
+            <input type="radio" id="card" name="methodPay" value="картка" formControlName="methodPay">
             <label for="card" class="radioBtn__label"><span class="style"></span> Карткою Visa/Mastercard</label>
           </div>
         </section>
 
-        <section class="addComment"> 
-          <input type="checkbox" id="addComment">
-          <label for="addComment" class="addComment__label"><span class="styleCheckbox"></span> Додати коментар</label>
+        <section class="addComment">
+          <input type="checkbox" id="addComment" >
+          <label for="addComment" value=false class="addComment__label"><span class="styleCheckbox"></span> Додати
+            коментар</label>
+
+          <div class="fieldWrapper">
+            <textarea class="commentArea" formControlName="addComment"></textarea>
+          </div>
         </section>
 
         <section class="orderSummary">
@@ -63,15 +113,16 @@
         <div class="shopper__content">
           <h3 class="shopper__title">Ваш шопер</h3>
 
-          <app-basket-product></app-basket-product>
-          
+          <app-basket-product (totalPrice)="totalPrice($event)" (amountProducts)="amountProducts($event)">
+          </app-basket-product>
+
           <div class="total">
-            <p class="total__text">Товарів: <span>{{ amount }} шт.</span></p>
+            <p class="total__text">Товарів: <span>{{ quantityGoods }} шт.</span></p>
             <p class="total__text">Сума: <span>{{ orderPrice }} грн.</span></p>
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 

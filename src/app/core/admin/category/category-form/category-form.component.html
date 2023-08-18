@@ -3,6 +3,8 @@
     <div class="inputsWrapper">
       <input type="text" formControlName="name" class="input" placeholder="*Назва категорії">
       <input type="text" formControlName="path" class="input" placeholder="*Шлях категорії">
+      <input type="text" formControlName="nameBth" class="input" placeholder="*Назва кнопки для банера">
+
     </div>
     <textarea formControlName="description" class="input input--textarea" placeholder="*Опис категорії" cols="30" rows="5"></textarea>
 
@@ -14,7 +16,7 @@
       </ng-container>
       <ng-template #elseTemplate>
         <div class="inputFile__imgWrapper">
-          <img [src]="imgUrl" class="inputFile__img">
+          <img [src]="editCategory ? editCategory.img : imgUrl" class="inputFile__img">
           <span class="cross" (click)="deleteImg()">&times;</span>
         </div>
       </ng-template>
@@ -28,13 +30,13 @@
       </ng-container>
       <ng-template #elseTemp>
         <div class="inputFile__imgWrapper">
-          <img [src]="bannerUrl" class="inputFile__img">
+          <img [src]="editCategory ? editCategory.banner : bannerUrl" class="inputFile__img">
           <span class="cross" (click)="deleteBanner()">&times;</span>
         </div>
       </ng-template>
     </div>
 
-    <button type="submit" class="categoryForm__btn" [disabled]="categoryForm.invalid">{{editStatus ? 'Зберезти зміни' :
+    <button type="submit" class="categoryForm__btn" [disabled]="categoryForm.invalid">{{editCategory ? 'Зберезти зміни' :
       'додати нову категорію'}}</button>
   </form>
 </div>

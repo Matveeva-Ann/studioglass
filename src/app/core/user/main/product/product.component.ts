@@ -12,6 +12,7 @@ export class ProductComponent {
   public goodsArr: IGoodsResponse[] = [];
   public categoryTitle = '';
 
+
   constructor(
     public goodsService:GoodsService,
     private activatedRoute: ActivatedRoute,
@@ -27,10 +28,8 @@ export class ProductComponent {
 
   getGoodsByCategory():void{
     const categoryNamePath = this.activatedRoute.snapshot.paramMap.get('category') as string;
-    console.log(categoryNamePath)
     this.goodsService.getGoodsByCategory(categoryNamePath).subscribe((data)=>{
       this.goodsArr = data as IGoodsResponse[];
-      // this.products = this.userProducts;
       this.categoryTitle = data[0]['category'];
     })
   }

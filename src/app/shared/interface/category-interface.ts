@@ -5,6 +5,7 @@ export interface ICategoryRequest {
   path: string;
   img: string;
   banner: string;
+  nameBth?: any;
 }
 
 export interface ICategoryResponse extends ICategoryRequest {

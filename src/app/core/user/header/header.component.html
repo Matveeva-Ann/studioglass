@@ -80,14 +80,27 @@
             d="M448 160h-64v-4.5C384 87 329 32 260.5 32h-8C184 32 128 87 128 155.5v4.5H64L32 480h448l-32-320zm-288-4.5c0-50.7 41.8-91.5 92.5-91.5h8c50.7 0 91.5 40.8 91.5 91.5v4.5H160v-4.5zM67.8 448l24.9-256H128v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h192v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h35.4l24.9 256H67.8z"
             fill="#FFF" />
         </svg>
+        <span class="amountProduct" *ngIf="amountProduct > 0">{{ amountProduct }}</span>
       </a>
- 
       <app-basket-dialog *ngIf="basketDialogIsOpen" (closeThisWindow)="closeBasketDialog()"></app-basket-dialog>
+
+      <div class="emptyBasket" *ngIf="emptyBasket" >
+        <p class="emptyBasket__text">Ваш шопер порожній
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 288 288"><svg
+              xmlns="http://www.w3.org/2000/svg" width="288" height="288" viewBox="0 0 32 32">
+              <path fill="#fff"
+                d="M16.5 29C9.596 29 4 23.404 4 16.5S9.596 4 16.5 4 29 9.596 29 16.5 23.404 29 16.5 29zm0-1C22.851 28 28 22.851 28 16.5S22.851 5 16.5 5 5 10.149 5 16.5 10.149 28 16.5 28zm-.019-7C13 21 11 23 11 23v-1s2-2 5.481-2S22 22 22 22v1s-2.037-2-5.519-2zm4.141-11.033-.559.829 3.316 2.237.559-.829-3.316-2.237zm-11.56 2.237.559.829 3.316-2.237-.559-.829-3.316 2.237zM12 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                class="color000 svgShape" />
+            </svg></svg>
+        </p>
+      </div>
+
 
     </div>
   </div>
 
-  <div class="sideHeader" appBlurOnScroll *ngIf="notAdminPanel" [ngClass]="{'displayNone': adminPage}" [ngClass]="{'borderColor': isProductPage}">
+  <div class="sideHeader" appBlurOnScroll *ngIf="notAdminPanel" [ngClass]="{'displayNone': adminPage}"
+    [ngClass]="{'borderColor': isProductPage}">
     <app-social-language [isProductPage]="isProductPage"></app-social-language>
   </div>
 

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ICategoryResponse } from 'src/app/shared/interface/category-interface';
 import { CategoriesService } from 'src/app/shared/services/categories/categories.service';
 
 @Component({
@@ -7,18 +9,25 @@ import { CategoriesService } from 'src/app/shared/services/categories/categories
   styleUrls: ['./about-category.component.scss']
 })
 export class AboutCategoryComponent {
-
+  public hasDescription = false;
+  public text: Array<string> = [];
   constructor(
     private categoriesService: CategoriesService,
+    private activatedRoute: ActivatedRoute
   ){}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+    this.categoriesService.getCategory().subscribe((data)=>{
+      const allCategories = data as ICategoryResponse[];
+      allCategories.filter((elem) =>{
+        if(elem.path === this.activatedRoute.snapshot.paramMap.get('category')){
+          if (elem.description){
+            this.hasDescription = true;
+            this.text = elem.description.split('$');
+          }
+        }
+      })
+    })
     
   }
-
-  // getDescriptionCaregory(){
-  //   this.categoriesService.
-  // }
 }

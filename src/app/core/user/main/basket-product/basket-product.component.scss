@@ -1,6 +1,8 @@
 @import "/src/app/styles/variables";
 
 .basketProducts__item {
+  position: relative;
+
   display: flex;
   width: 100%;
   gap: 20px;
@@ -11,10 +13,24 @@
 }
 
 .basketProducts__img {
-  width: 100px;
-  height: 100px;
+  max-width: 100px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
 }
+.cross{
+  cursor: pointer;
+  user-select: none;
 
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  font-size: 40px;
+  &:active{
+    transform: translate3d(0, 0.1em, 0);
+  }
+}
 .basketProducts__title {
   margin: -10px 0 10px;
   font-size: 18px;

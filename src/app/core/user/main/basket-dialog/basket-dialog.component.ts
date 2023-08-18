@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output, SimpleChanges } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
+import { LocalStorageSubjectService } from 'src/app/shared/services/subjects/local-storage-subject/local-storage-subject.service';
 
 @Component({
   selector: 'app-basket-dialog',
@@ -12,20 +14,35 @@ export class BasketDialogComponent {
   public quantityGoods = 0;
   public goodsAmount = 0;
 
+  constructor(
+    private router:Router,
+    private localStorageSubject: LocalStorageSubjectService,
+
+  ){}
+
   ngOnInit(): void {
-    this.countSum();
-    
+    this.countSum(); 
+    this.localStorageSubject.localStorage$.subscribe(()=> {
+      this.countSum(); 
+      if (!JSON.parse(localStorage.getItem('basket') as string)){
+        this.closeWindow();
+        this.router.navigate(['/collection']);
+      }
+    })
   }
 
   countSum() {
     const productsInBasket: Array<IGoodsResponse> = JSON.parse(
       localStorage.getItem('basket') as string
     );
-    this.quantityGoods =  productsInBasket.reduce((total, elem) => total + elem.count, 0);
-    this.goodsAmount = productsInBasket.reduce(
-      (total, elem) => total + elem.price * elem.count,
-      0
-    );
+    if(productsInBasket){
+      this.quantityGoods =  productsInBasket.reduce((total, elem) => total + elem.count, 0);
+      this.goodsAmount = productsInBasket.reduce(
+        (total, elem) => total + elem.price * elem.count,
+        0
+      );
+    }
+   
   }
 
   totalPrice(event: number){

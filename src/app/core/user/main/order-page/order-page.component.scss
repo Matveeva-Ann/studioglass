@@ -83,16 +83,16 @@
   line-height: 20px;
 }
 
-.inputGroup{
+.inputGroup {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
 }
-.order--distance{
+.order--distance {
   margin-bottom: 30px;
 }
 
-.inputField{
+.inputField {
   width: 100%;
   height: 62px;
   padding: 0 20px;
@@ -105,29 +105,31 @@
   font-size: 16px;
 }
 
-.aboutDelivery, .aboutOrder{
+.aboutDelivery,
+.aboutOrder {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 30px;
 }
 
-input[type="radio"]{
+input[type="radio"] {
   display: none;
 }
-.radioBtn__label{
+.radioBtn__label {
   cursor: pointer;
 
   margin-left: 30px;
   font-size: 18px;
 }
 
-.style, .styleCheckbox{
+.style,
+.styleCheckbox {
   position: relative;
   left: -28px;
   top: 4px;
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
 
     width: 16px;
@@ -136,8 +138,8 @@ input[type="radio"]{
     border: 1px solid white;
     border-radius: 50%;
   }
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     position: absolute;
 
     width: 10px;
@@ -152,43 +154,42 @@ input[type="radio"]{
     transition: transform 200ms linear;
   }
 }
-.styleCheckbox{
+.styleCheckbox {
   left: -28px;
   top: 5px;
-  &::after{
+  &::after {
     border-radius: 0%;
   }
-  &::before{
+  &::before {
     border-radius: 0%;
   }
 }
 
-input[type="radio"]:checked + .radioBtn__label .style::after{
+input[type="radio"]:checked + .radioBtn__label .style::after {
   transform: scale(1);
 }
 
-.addComment{
+.addComment {
   padding: 35px 0;
   border-top: 1px solid $rgb-border;
   border-bottom: 1px solid $rgb-border;
 }
 
-#addComment{
+#addComment {
   display: none;
 }
 
-.addComment__label{
+.addComment__label {
   cursor: pointer;
   user-select: none;
   font-size: 18px;
   padding-left: 30px;
-
 }
 
-#addComment:checked + .addComment__label .styleCheckbox::after{
+#addComment:checked + .addComment__label .styleCheckbox::after {
   transform: scale(1);
 }
-.due{
+.due {
   display: flex;
   justify-content: space-between;
 
@@ -199,18 +200,18 @@ input[type="radio"]:checked + .radioBtn__label .style::after{
   border-bottom: 1px solid $rgb-border;
 }
 
-.orderSummary{
+.orderSummary {
   padding: 20px 20px 30px;
   margin-top: 40px;
 
   background: rgba(0, 0, 0, 0.4);
 }
 
-.shopper{
+.shopper {
   width: 60%;
 }
 
-.shopper__content{
+.shopper__content {
   max-width: 540px;
   width: calc(100% - 62px);
 
@@ -224,14 +225,14 @@ input[type="radio"]:checked + .radioBtn__label .style::after{
   }
 }
 
-.shopper__title{
-  font-family: 'Gina-Light';
+.shopper__title {
+  font-family: "Gina-Light";
   font-weight: 300;
   font-size: 26px;
 
   margin: 0;
 }
-.total{
+.total {
   display: flex;
   justify-content: space-between;
 
@@ -239,7 +240,90 @@ input[type="radio"]:checked + .radioBtn__label .style::after{
   margin: 0 -30px;
   background: rgba(0, 0, 0, 0.4);
 }
-.total__text{
+.total__text {
   font-size: 18px;
   margin: 0;
 }
+.inputStyle {
+  height: 62px;
+  padding: 0 15px;
+  border: 1px solid $rgb-border;
+  background-color: transparent;
+  width: calc(100% - 40px);
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 62px;
+  &::placeholder {
+    color: #fff;
+    font-family: "Gina-Light";
+    font-weight: 300;
+  }
+}
+mat-select {
+  border: 1px solid $rgb-border;
+  padding: 20px 15px 20px 0px;
+  margin-top: 15px;
+  margin-right: 10px;
+  background-color: transparent;
+  width: 95%;
+}
+mat-option {
+  color: #fff;
+}
+.cdk-overlay-pane:not(.mat-mdc-select-panel-above)
+  .mdc-menu-surface.mat-mdc-select-panel {
+  background-color: #1c1c1c;
+}
+
+.wrapperFormField {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.mat-mdc-form-field {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: calc(50% - 10px);
+}
+textarea{
+  border: 1px solid $rgb-border;
+  width: 100%;
+  height: 200px;
+}
+
+.commentArea{
+  width: calc( 100% - 45px);
+  height: 100px;
+  padding: 20px;
+  border: 1px solid $rgb-border;
+  background-color: transparent;
+  font-family: "Gina-Light";
+  font-weight: 300;
+  color: #fff;
+  outline: none;
+  font-size: 18px;
+  resize: none;
+  position: relative;
+  transition-duration: 1s;
+  overflow: hidden;
+  margin: 20px 0 10px;
+
+}
+.fieldWrapper{
+  overflow: hidden;
+  flex-direction: column;
+  height: 0px;
+  transition-duration: 1s;
+
+}
+#addComment:checked ~ .fieldWrapper {
+  height: 170px;
+}
+
+.mat-mdc-select-value{
+  padding-left: 15px !important;
+  color: #fff !important;
+}
+

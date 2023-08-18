@@ -25,7 +25,6 @@ export class GoodsService {
   }
 
   deleteGoods(id:string){
-    console.log(id)
     const goodDocRef = doc(this.afs, `products/${id}`);
     return deleteDoc(goodDocRef);
   }

@@ -4,7 +4,7 @@
     <div class="input__wrapper">
       <select class="input" formControlName="category" (change)="onCategoryChange($event)"> 
         <option value="*Виберіть категорію" selected disabled>*Виберіть категорію</option>
-        <option [value]="item.category" *ngFor="let item of allCategories">{{ item.category }}</option>
+        <option [value]="item.name" *ngFor="let item of allCategories">{{ item.name }}</option>
       </select>
 
       <input type="text" formControlName="name" class="input" placeholder="*Назва">
@@ -26,12 +26,12 @@
       </ng-container>
       <ng-template #elseTemplate>
         <div class="inputFile__imgWrapper">
-          <img  [src]="ingUrl" class="inputFile__img">
+          <img  [src]="editProduct ? editProduct.img : imgUrl" class="inputFile__img">
           <span class="cross" (click)="deleteImg()">&times;</span>
         </div>
       </ng-template>
     </div>
  
-    <button type="submit" class="goodsForm__btn" [disabled]="goodsForm.invalid">{{editStatus ? 'Зберезти зміни' : 'додати новий товар'}}</button> 
+    <button type="submit" class="goodsForm__btn" [disabled]="goodsForm.invalid">{{editProduct ? 'Зберезти зміни' : 'додати новий товар'}}</button> 
   </form>
 </div>

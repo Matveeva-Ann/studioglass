@@ -1,7 +1,7 @@
 @import "/src/app/styles/variables";
-@import '/src/app/styles/mixins';
+@import "/src/app/styles/mixins";
 
-.container{
+.container {
   width: 100%;
   height: 100vh;
 
@@ -15,60 +15,60 @@
 
   @include dimming;
   backdrop-filter: blur(5px);
+  overflow: hidden;
 }
 
-.content{
+.content {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 
-.login{
+.login {
   max-width: 590px;
   width: 100%;
 }
 
-.login__title{
+.login__title {
   @include titleStyle;
 }
 
-.login__form{
+.login__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
-.auth__inputsWrapper{
+.auth__inputsWrapper {
   min-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-mat-form-field{
+mat-form-field {
   margin-bottom: 20px;
 }
 
-.popup{
+.popup {
   width: 100%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.popup__link{
+.popup__link {
   padding-bottom: 30px;
   font-size: 18px;
   text-decoration: none;
   color: #fff;
-  font-family: 'Gina-Regular';
+  font-family: "Gina-Regular";
   font-weight: 400;
 }
 
-input{
+input {
   width: 100%;
   height: 62px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -76,7 +76,7 @@ input{
   background-color: transparent;
 }
 
-@import '/src/app/styles/variables';
+@import "/src/app/styles/variables";
 
 .btn {
   cursor: pointer;
@@ -99,7 +99,7 @@ input{
     content: "";
     position: absolute;
     display: inline-block;
-    
+
     width: 80%;
     height: 1px;
     bottom: 0;
@@ -117,4 +117,34 @@ input{
 
 .btn__style {
   margin-left: 40px;
+}
+
+.message {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  padding: 20px 50px;
+  background-color: black;
+  font-size: 18px;
+  @media (max-width: 1440px) {
+    top: 70px;
+  }
+  @media (max-width: 770px) {
+    top: 50px;
+  }
+  animation-name: messageHide;
+  animation-duration: 6000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes messageHide {
+  0% {
+    transform: translateX(0%);
+  }
+  70%{
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

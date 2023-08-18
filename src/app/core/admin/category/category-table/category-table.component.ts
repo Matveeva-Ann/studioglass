@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ICategoryResponse } from 'src/app/shared/interface/category-interface';
 import { CategoriesService } from 'src/app/shared/services/categories/categories.service';
 
@@ -8,8 +8,9 @@ import { CategoriesService } from 'src/app/shared/services/categories/categories
   styleUrls: ['./category-table.component.scss']
 })
 export class CategoryTableComponent {
-  public categoriesArr: ICategoryResponse[] = [];
+  @Output() editCategoryClick = new EventEmitter<ICategoryResponse>();
 
+  public categoriesArr: ICategoryResponse[] = [];
 
   constructor(
     private categoriesService: CategoriesService,
@@ -26,7 +27,7 @@ export class CategoryTableComponent {
   }
 
   edit(category:ICategoryResponse){
-
+    this.editCategoryClick.emit(category);
   }
 
   delete(category:ICategoryResponse){

@@ -2,6 +2,9 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 register();
 import Swiper from 'swiper';
+import { CategoriesService } from 'src/app/shared/services/categories/categories.service';
+import { GoodsService } from 'src/app/shared/services/goods/goods.service';
+import { IGoodsResponse } from 'src/app/shared/interface/goods-interface';
 
 
 @Component({
@@ -14,26 +17,35 @@ export class BestOffersComponent {
   @ViewChild('swiper')
   swiperRef!: ElementRef;
   swiper?: Swiper;
+  slides: Array<IGoodsResponse> = [];
+  swiperPaginationOptions = {
+    clickable: true,
+    type: 'bullets',
+  };
+  constructor(
+    private goodsService:GoodsService,
+  ){}
 
-  ngAfterViewInit () {
-    this.initSwiper();
-  }
   ngOnInit(): void {
     this.reflections();
+    this.getGoods();
   }
 
-  initSwiper() {
-    this.swiper = new Swiper(this.swiperRef.nativeElement, {
-      slidesPerView: this.numberReflections,
-      spaceBetween: 10,
-      loop: true,
-    });
+  getGoods(){
+    this.goodsService.getGoods().subscribe((data)=>{
+      const allGoods = data as IGoodsResponse[];
+      const index = allGoods.length - 10;
+      this.slides = allGoods.slice(index);
+    })
   }
 
-  swiperReady() {
-    this.swiper = this.swiperRef?.nativeElement.swiper;
+  ngDoCheck(): void {
+    this.swiperPaginationOptions = {
+      clickable: true,
+      type: 'bullets',
+    };
   }
-
+  
   public numberReflections = 4;
 
   @HostListener('window:resize', ['$event'])
@@ -44,67 +56,5 @@ export class BestOffersComponent {
     this.swiper?.update();
   }
 
-  slides = [
-    {
-      img: '/assets/img/img1.webp',
-      title: ' Скляні двері для душу FORCE color',
-      price: 5,
-    },
-    {
-      img: '/assets/img/img2.webp',
-      title: 'Скляна душова кабіна CRISTAL color',
-      price: 99955,
-    },
-    {
-      img: '/assets/img/img3.webp',
-      title: 'Скляна душова кабіна CRISTAL color',
-      price: 7755,
-    },
-    {
-      img: '/assets/img/img1.webp',
-      title: ' Скляні двері для душу FORCE color',
-      price: 5,
-    },
-    {
-      img: '/assets/img/img2.webp',
-      title: 'Скляна душова кабіна CRISTAL color',
-      price: 99955,
-    },
-    {
-      img: '/assets/img/img3.webp',
-      title: 'Скляна душова кабіна CRISTAL color',
-      price: 7755,
-    },
-    {
-      img: '/assets/img/img1.webp',
-      title: ' Скляні двері для душу FORCE color',
-      price: 5,
-    },
-    {
-      img: '/assets/img/img2.webp',
-      title: 'Скляна душова кабіна CRISTAL color',
-      price: 99955,
-    },
-    {
-      img: '/assets/img/img3.webp',
-      title: 'Скляна душова кабіна CRISTAL color',
-      price: 7755,
-    },
-  ];
-
-//   @ViewChild('swiperContainer') swiperContainer: any;
-
-//  ngOnInit(): void {
-//   this.initSwiper();
-//  }
-
-//   public initSwiper() {
-//     const swiperEl = this.swiperContainer.nativeElement;
-//     const Swiper = require('swiper').default;
-
-//     new Swiper(swiperEl, {
-//       // Ваші налаштування Swiper тут
-//     });
-//   }
 }
 

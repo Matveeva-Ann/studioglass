@@ -2,6 +2,7 @@
 
   <li class="basketProducts__item" *ngFor="let product of productsInBasket">
     <img [src]="product.img" [alt]="product.name" class="basketProducts__img">
+    <span class="cross" ng (click)="removeUnit(product)">&times;</span>
     <div style="flex-grow: 1;">
       <h3 class="basketProducts__title">{{ product.name }}</h3>
       <p class="basketProducts__characteristic">Розмір <span class="basketProducts__characteristic--accent">{{ product.size }}</span></p>
@@ -16,7 +17,7 @@
           <span class="changeQuantity__number">{{ product.count }}</span>
           <span class="changeQuantity__increase" (click)="increase(product)">+</span>
         </p>
-        <p class="prise">{{ product.price * amount }} грн.</p>
+        <p class="prise">{{ product.price *  product.count }} грн.</p>
       </div>
     </div>
   </li>

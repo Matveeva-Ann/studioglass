@@ -16,11 +16,13 @@
   &::after{
     z-index: 0;
   }
+  overflow: hidden;
 }
 
 .content {
   display: flex;
   justify-content: center;
+  padding-bottom: 80px;
 }
 
 .register {
@@ -70,4 +72,37 @@
   color: #ffffff;
   font-size: 18px;
   padding: 0 20px;
+}
+
+.message {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  padding: 15px 40px;
+  background-color: black;
+  color: #ffffff;
+  font-size: 22px;
+  font-family: 'Gina-Medium';
+  font-weight: 500;
+  @media (max-width: 1440px) {
+    top: 70px;
+  }
+  @media (max-width: 770px) {
+    top: 50px;
+  }
+  animation-name: messageHide;
+  animation-duration: 6000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes messageHide {
+  0% {
+    transform: translateX(0%);
+  }
+  70%{
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

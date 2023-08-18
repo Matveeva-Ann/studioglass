@@ -100,3 +100,41 @@ $custom-theme: mat.define-light-theme((
 .mat-mdc-form-field-subscript-wrapper{
   display: none;
 }
+
+.mat-mdc-header-row{
+    background: rgb(149 149 149) !important;
+    color: #fff !important;
+}
+.mat-mdc-table tbody, .mat-mdc-table tfoot {
+  background: #d3d3d3 !important;
+}
+
+.black-background .mat-mdc-select-value{
+  padding-left: 15px;
+  color: #fff;
+}
+
+
+.mat-mdc-option .mdc-list-item__primary-text {
+  color: aliceblue;
+}
+
+mat-mdc-table mdc-data-table__table cdk-table mat-elevation-z8 ng-tns-c58-0{
+  margin-top: 50px;
+}
+table {
+  margin-top: 20px;
+}
+.mat-form-field-outline {
+  border-color: red !important;
+  border: 1px solid red !important;
+  border-radius: 0% !important;
+}
+
+.mat-mdc-option .mdc-list-item__primary-text {
+  margin-bottom: 15px;
+}
+
+.cdk-overlay-pane:not(.mat-mdc-select-panel-above) .mdc-menu-surface.mat-mdc-select-panel, .mat-mdc-select-panel-above .mdc-menu-surface.mat-mdc-select-panel {
+  background-color: #838383;
+}

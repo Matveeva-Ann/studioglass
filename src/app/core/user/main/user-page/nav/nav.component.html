@@ -7,4 +7,4 @@
       <a [routerLink]="[ 'orderHistory' ]" class="nuv__link">Історія замовлення</a> 
     </li>
   </ul>
-  <app-btn [nameBtn]="'ВИХІД'" style="margin-left: 30px;"></app-btn>
+  <app-btn [nameBtn]="'ВИХІД'" style="margin-left: 30px;" (click)="logout()"></app-btn>

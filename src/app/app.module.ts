@@ -23,6 +23,7 @@ import { AboutCategoryComponent } from './core/user/main/product/about-category/
 import { OrderPageComponent } from './core/user/main/order-page/order-page.component';
 import { ProductDetailComponent } from './core/user/main/product/product-detail/product-detail.component';
 import { QuantityCounterComponent } from './core/user/main/product/product-detail/quantity-counter/quantity-counter.component';
+import { PaymentDeliveryComponent } from './core/user/main/payment-delivery/payment-delivery.component';
 // import { BasketProductComponent } from './core/user/main/basket-product/basket-product.component';
 // import { BasketDialogComponent } from './core/user/main/basket-dialog/basket-dialog.component';
 
@@ -40,6 +41,7 @@ import { QuantityCounterComponent } from './core/user/main/product/product-detai
     OrderPageComponent,
     ProductDetailComponent,
     QuantityCounterComponent,
+    PaymentDeliveryComponent,
     
   ],
   imports: [

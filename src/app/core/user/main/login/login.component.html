@@ -1,6 +1,10 @@
 <div class="container">
   <div class="content">
 
+    <div class="message" *ngIf="wrongPassword">
+      <p class="text">Перевірте правильність заповнення полів</p>
+    </div>
+
     <div class="login">
       <h2 class="login__title">Вхід в кабінет</h2>
       <form class="login__form" [formGroup]="userLoginForm" (submit)="loginUser()">

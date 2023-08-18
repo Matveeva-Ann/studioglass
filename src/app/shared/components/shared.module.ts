@@ -14,6 +14,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { BasketProductComponent } from 'src/app/core/user/main/basket-product/basket-product.component';
 
+
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+// import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+
 const MATERIAL = [
   MatDialogModule,
   MatFormFieldModule,
@@ -21,6 +28,8 @@ const MATERIAL = [
   MatProgressBarModule,
   MatSelectModule,
   MatPseudoCheckboxModule,
+  MatTableModule,
+  MatIconModule,
 ];
 
 @NgModule({

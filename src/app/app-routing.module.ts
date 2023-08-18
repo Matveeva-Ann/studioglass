@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GoodsCollectionComponent } from './core/user/main/home/goods-collection/goods-collection.component';
 import { OrderPageComponent } from './core/user/main/order-page/order-page.component';
+import { PaymentDeliveryComponent } from './core/user/main/payment-delivery/payment-delivery.component';
 import { ProductDetailComponent } from './core/user/main/product/product-detail/product-detail.component';
 import { ProductComponent } from './core/user/main/product/product.component';
 import { UserPageComponent } from './core/user/main/user-page/user-page.component';
@@ -35,7 +36,8 @@ const routes: Routes = [
   },
   {path:'product/:category', component: ProductComponent},
   {path:'product/:category/:id', component: ProductDetailComponent},
-  {path: 'order', component: OrderPageComponent }
+  {path: 'order', component: OrderPageComponent },
+  {path: 'oplata-ta-dostavka', component: PaymentDeliveryComponent}
 ];
 
 @NgModule({

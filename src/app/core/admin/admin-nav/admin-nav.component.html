@@ -6,10 +6,11 @@
       </li>
       <li class="list-item" routerLinkActive="active" [ngClass]="{'active': activeTab === 'order'}">
         <a class="list-item-link" (click)="click('order')" [routerLink]="[ 'order' ]">Замовлення</a>
+        <span class="list-item-callBack" *ngIf="orders!==0">{{ orders }}</span>
       </li>
       <li class="list-item" routerLinkActive="active" [ngClass]="{'active': activeTab === 'callBack'}">
         <a class="list-item-link " (click)="click('callBack')" [routerLink]="[ 'callBack' ]">Передзвонити</a>
-        <span class="list-item-callBack" *ngIf="callsUnit!==0">{{callsUnit}}</span>
+        <span class="list-item-callBack" *ngIf="callsUnit!==0">{{ callsUnit }}</span>
       </li>
       <li class="list-item" routerLinkActive="active" [ngClass]="{'active': activeTab === 'category'}">
         <a class="list-item-link" [routerLink]="[ 'category' ]" (click)="click('category')">Категорії</a>

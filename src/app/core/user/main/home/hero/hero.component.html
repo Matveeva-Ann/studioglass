@@ -1,12 +1,13 @@
 <section class="hero">
 
   <ion-content>
-    <swiper-container
-    autoplay-delay="4000"
+    <swiper-container #swiperContainer
+    autoplay-delay="5000"
     speed="1500"
+    centered-slides="true"
     [slidesPerView]="1"
     [spaceBetween]="0"
-    [loop]="true"
+    [loop]="loop"
     [pagination]="swiperPaginationOptions"
     >
       <swiper-slide *ngFor="let item of sliderInfo">
@@ -18,5 +19,4 @@
       </swiper-slide>
     </swiper-container>
   </ion-content>
-
 </section>
