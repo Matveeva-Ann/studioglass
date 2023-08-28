@@ -64,7 +64,9 @@
   font-family: 'Gina-Light';
   font-weight: 300;
   padding: 20px 30px 35px;
-
+  @media (max-width: 770px) {
+    text-align: center;
+  }
 }
 
 .basket__footer{
@@ -101,14 +103,14 @@
   background-color: transparent;
   border: none;
 
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   color: #fff;
 }
 
 .buttons__issue{
   border: 1px solid white;
-  padding: 15px 20px;
+  padding: 15px 10px;
   text-decoration: none;
   &:active{
     transform: translate3d(1px, 1px, 0);

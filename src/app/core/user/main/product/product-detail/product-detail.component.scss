@@ -17,17 +17,27 @@ app-bread-crumbs {
 .product {
   display: flex;
   color: black;
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
 }
 .product__img {
   width: 50%;
   height: 100%;
   margin-bottom: 20px;
+  @media (max-width: 990px) {
+    width: 100%;
+  }
 }
 .product__text {
   max-width: 650px;
   width: 100%;
   margin: 0 auto;
   padding: 10px 10px 0 10px;
+  @media (max-width: 990px) {
+    width: auto;
+    padding: 10px;
+  }
 }
 
 .addOptions {
@@ -109,11 +119,25 @@ app-bread-crumbs {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
+}
+.optionsPrice__wrapper{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 550px) {
+    width: 100%;
+  margin-bottom: 30px;
+  }
 }
 .optionsPrice__btnAdd {
   cursor: pointer;
   padding: 13px 15px;
   border: 1px solid black;
+  color: black;
 
   text-transform: uppercase;
   background-color: transparent;

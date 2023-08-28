@@ -10,6 +10,9 @@
   &:not(:last-child){
     border-bottom: 1px solid $rgb-border;
   }
+  @media (max-width: 400px) {
+    flex-direction: column;   
+  }
 }
 
 .basketProducts__img {
@@ -17,6 +20,9 @@
   height: 100%;
   width: 100%;
   background-size: cover;
+  @media (max-width: 400px) {
+    max-width: 150px;
+  }
 }
 .cross{
   cursor: pointer;
@@ -32,7 +38,7 @@
   }
 }
 .basketProducts__title {
-  margin: -10px 0 10px;
+  margin: -10px 23px 10px 0;
   font-size: 18px;
   font-family: "Gina-Regular";
   font-weight: 400;

@@ -49,6 +49,9 @@
 .order__forms {
   display: flex;
   border-top: 1px solid $rgb-border;
+  @media (max-width: 990px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .userForm {
@@ -65,8 +68,12 @@
   @media (max-width: 1200px) {
     padding: 15px;
   }
+  @media (max-width: 990px) {
+    width: calc(100% - 32px);
+  }
   @media (max-width: 770px) {
     padding: 30px 12px;
+    width: calc(100% - 25px);
   }
 }
 
@@ -209,6 +216,9 @@ input[type="radio"]:checked + .radioBtn__label .style::after {
 
 .shopper {
   width: 60%;
+  @media (max-width: 990px) {
+    width: 100%;
+  }
 }
 
 .shopper__content {
@@ -222,6 +232,11 @@ input[type="radio"]:checked + .radioBtn__label .style::after {
   backdrop-filter: blur(20px);
   @media (max-width: 1200px) {
     margin: 0 auto 40px auto;
+  }
+  @media (max-width:990px) {
+    margin: 0 auto 0px auto;
+    max-width: 850px;
+    width: auto;
   }
 }
 
@@ -287,14 +302,14 @@ mat-option {
   margin-left: 10px;
   width: calc(50% - 10px);
 }
-textarea{
+textarea {
   border: 1px solid $rgb-border;
   width: 100%;
   height: 200px;
 }
 
-.commentArea{
-  width: calc( 100% - 45px);
+.commentArea {
+  width: calc(100% - 45px);
   height: 100px;
   padding: 20px;
   border: 1px solid $rgb-border;
@@ -309,21 +324,18 @@ textarea{
   transition-duration: 1s;
   overflow: hidden;
   margin: 20px 0 10px;
-
 }
-.fieldWrapper{
+.fieldWrapper {
   overflow: hidden;
   flex-direction: column;
   height: 0px;
   transition-duration: 1s;
-
 }
 #addComment:checked ~ .fieldWrapper {
   height: 170px;
 }
 
-.mat-mdc-select-value{
+.mat-mdc-select-value {
   padding-left: 15px !important;
   color: #fff !important;
 }
-

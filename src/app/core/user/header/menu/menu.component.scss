@@ -19,6 +19,7 @@
   @media (max-width: 770px) {
     width: calc(100%);
     margin-left: 0px;
+    margin-top: 50px;
     border-left: none;
     padding-top: 50px;
     top: 0;
@@ -37,6 +38,7 @@
     transform: translateX(0%);
   }
 }
+
 
 .menu__info {
   max-width: 1380px;
