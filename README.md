@@ -1,27 +1,34 @@
-# Studioglass
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+# Проект "Studioglass" 👩
 
-## Development server
+## Використані технології:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular
+- Angular Material
+- Бібліотека Swiper
 
-## Code scaffolding
+## Про проект 💻
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Цей проект є реплікою веб-сайту [https://studioglass.ua/](https://studioglass.ua/). Веб-сайт розміщено на платформі Firebase, і ви можете перейти за цією посиланням: [https://studioglass-43402.web.app/](https://studioglass-43402.web.app/).
 
-## Build
+Щоб перевірити всі можливості цього додатка, використовуйте наступні дані для входу:
+- Логін: nasty@ukr.net
+- Пароль: 123123
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Для адміністратора доступний вхід за цією посиланням: [https://studioglass-43402.web.app/auth](https://studioglass-43402.web.app/auth)
+- Логін: admin@ukr.net
+- Пароль: 123123
 
-## Running unit tests
+## Функціональність ⚙️
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Цей додаток підтримує наступну функціональність:
 
-## Running end-to-end tests
+- Банери реалізовані за допомогою бібліотеки Swiper. Ви також можете додавати нові банери через адміністраторську панель.
+- Можливість залишити контактні дані для зв'язку з адміністратором.
+- Колекції товарів з можливістю замовити, а всі замовлення доступні через адміністраторську панель.
+- Реалізована корзина з можливістю коригувати її вміст.
+- Можливість реєстрації на сайті та входу для користувачів.
+- Окремий вхід для адміністратора.
+- Через панель адміністратора є можливість змінювати контент сайту, додавати або видаляти категорії товарів, додавати або видаляти товари, а також переглядати дані замовлень і контактні дані користувачів для зв'язку.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
